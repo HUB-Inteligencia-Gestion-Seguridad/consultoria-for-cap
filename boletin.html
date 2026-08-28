@@ -61,29 +61,51 @@ const feeds=[
 ];
 const cont=document.getElementById('fuentes');
 cont.innerHTML='';
-feeds.forEach(async f=>{
+function tarjeta(f){
  const caja=document.createElement('div'); caja.className='card';
  const h=document.createElement('h3'); h.textContent=f.nombre; caja.appendChild(h);
- if(!f.url){caja.appendChild(Object.assign(document.createElement('p'),{textContent:'Configura tu RSS en dof.gob.mx/filtroRss.php con la palabra "seguridad" y pega la URL en el código.'})); cont.appendChild(caja); return;}
- try{
-  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
-  const d=await r.json();
-  if(d.status!=='ok') throw 0;
-  d.items.slice(0,5).forEach(i=>{
-   const p=document.createElement('p');
-   const a=document.createElement('a'); a.href=i.link; a.target='_blank'; a.rel='noopener'; a.textContent=i.title;
-   const s=document.createElement('small'); s.textContent=' · '+i.pubDate;
-   p.appendChild(a); p.appendChild(s); caja.appendChild(p);
-  });
- }catch(e){
-  const p=document.createElement('p'); p.textContent='Fuente no disponible en este momento. Ver original: '+f.url;
-  caja.appendChild(p);
+ return caja;
+}
+function pintaItems(caja,items){
+ items.forEach(i=>{
+  const p=document.createElement('p');
+  const a=document.createElement('a'); a.href=i.link; a.target='_blank'; a.rel='noopener'; a.textContent=i.title;
+  const s=document.createElement('small'); s.textContent=' · '+i.fecha;
+  p.appendChild(a); p.appendChild(s); caja.appendChild(p);
+ });
+}
+function error(caja,f){
+ const p=document.createElement('p'); p.textContent='Fuente no disponible en este momento. Ver original: '+f.url;
+ caja.appendChild(p);
+}
+async function viaAllOrigins(url){
+ const r=await fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url));
+ const d=await r.json();
+ if(!d.contents) throw 0;
+ const xml=new DOMParser().parseFromString(d.contents,'text/xml');
+ const items=[...xml.querySelectorAll('item')].slice(0,5).map(it=>({
+  title:(it.querySelector('title')?it.querySelector('title').textContent:''),
+  link:(it.querySelector('link')?it.querySelector('link').textContent:''),
+  fecha:(it.querySelector('pubDate')?it.querySelector('pubDate').textContent:'')
+ }));
+ if(!items.length) throw 0;
+ return items;
+}
+async function viaRss2Json(url){
+ const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(url));
+ const d=await r.json();
+ if(d.status!=='ok') throw 0;
+ return d.items.slice(0,5).map(i=>({title:i.title,link:i.link,fecha:i.pubDate}));
+}
+feeds.forEach(async f=>{
+ const caja=tarjeta(f);
+ if(!f.url){
+  caja.appendChild(Object.assign(document.createElement('p'),{textContent:'Configura tu RSS en dof.gob.mx/filtroRss.php con la palabra "seguridad" y pega la URL en el código.'}));
+  cont.appendChild(caja); return;
  }
+ try{ pintaItems(caja, await viaAllOrigins(f.url)); }
+ catch(e){ try{ pintaItems(caja, await viaRss2Json(f.url)); } catch(e2){ error(caja,f); } }
  cont.appendChild(caja);
-});
-</script>
-</body>
-</html>
 });
 </script>
 </body>
