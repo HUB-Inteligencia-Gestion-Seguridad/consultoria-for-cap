@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boletín de Inteligencia | Hub de Inteligencia y Gestión en Seguridad</title>
+<meta name="description" content="Boletín de inteligencia en seguridad: noticias de seguridad privada y pública, crimen, marco jurídico (DOF) y resoluciones judiciales (SCJN) en México.">
 <style>
 :root{--g:#14181d;--n:#1e242b;--o:#c9a227;--o2:#f0d48a;--a:#a9afb6;--t:#f2f4f6}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -40,7 +41,7 @@ a{color:var(--o2)}
 </nav>
 <div class="wrap">
 <h2>Boletín de Inteligencia</h2>
-<p class="nota">Curaduría automática con fuente citada: marco jurídico (DOF), resoluciones y comunicados judiciales (SCJN) y noticias de seguridad en México. Sin trazabilidad no hay confianza: cada titular enlaza a su fuente original.</p>
+<p class="nota">Curaduría automática con fuente citada: noticias de seguridad privada y pública, crimen y violencia, resoluciones judiciales (SCJN) y marco jurídico (DOF). Sin trazabilidad no hay confianza: cada titular enlaza a su fuente original.</p>
 <div id="fuentes"><p>Cargando fuentes oficiales…</p></div>
 <h2>Análisis FOR&CAP</h2>
 <div class="card"><h3>Nota editorial de la semana</h3><p>Edita este bloque en boletin.html para publicar tu análisis semanal del entorno de seguridad (reformas, criterios, tendencias delictivas).</p><small>Hub FOR&CAP</small></div>
@@ -52,9 +53,11 @@ Los titulares se publican como cita con enlace a la fuente original.
 </footer>
 <script>
 const feeds=[
- {nombre:'SCJN — Comunicados y resoluciones', url:'https://www.scjn.gob.mx/rss.xml'},
- {nombre:'Animal Político — Seguridad', url:'https://animalpolitico.com/feed/'},
- {nombre:'DOF — Marco jurídico (pega aquí tu RSS filtrado)', url:''}
+ {nombre:'Noticias · Seguridad privada MX', url:'https://news.google.com/rss/search?q=seguridad+privada+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'},
+ {nombre:'Noticias · Seguridad pública MX', url:'https://news.google.com/rss/search?q=seguridad+p%C3%BAblica+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'},
+ {nombre:'Noticias · Crimen y violencia MX', url:'https://news.google.com/rss/search?q=crimen+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'},
+ {nombre:'SCJN · Resoluciones y comunicados', url:'https://www.scjn.gob.mx/rss.xml'},
+ {nombre:'DOF · Marco jurídico (pega aquí tu RSS filtrado)', url:''}
 ];
 const cont=document.getElementById('fuentes');
 cont.innerHTML='';
@@ -77,6 +80,10 @@ feeds.forEach(async f=>{
   caja.appendChild(p);
  }
  cont.appendChild(caja);
+});
+</script>
+</body>
+</html>
 });
 </script>
 </body>
