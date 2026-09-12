@@ -62,6 +62,101 @@ a{color:var(--oro2)}
 </div>
 <footer>
 HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
+  <style>
+/* ===== BANDA MANIFIESTO 3 FUNDADORES · HUB IGS ===== */
+.manifiesto-banda{max-width:1100px;margin:2.2rem auto 0;padding:0 1rem}
+.manifiesto-titulo{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:#8a94a6;text-align:center;margin:0 0 .9rem}
+.manifiesto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.manifiesto-card{background:#121a24;border:1px solid #263140;border-top:2px solid #D4A017;padding:.9rem .8rem;display:flex;flex-direction:column;gap:.45rem;cursor:pointer;transition:border-color .2s,transform .2s;text-align:left;font:inherit;color:inherit}
+.manifiesto-card:hover{border-color:#D4A017;transform:translateY(-2px)}
+.manifiesto-card h4{margin:0;font-size:.85rem;color:#D4A017}
+.manifiesto-card .rol{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#8a94a6;margin:0}
+.manifiesto-card p{margin:0;font-size:.78rem;line-height:1.45;color:#c3cbd8;font-style:italic}
+.manifiesto-card .leer{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#D4A017;margin-top:auto}
+@media(max-width:900px){.manifiesto-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}}
+.manifiesto-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:1rem;z-index:999}
+.manifiesto-modal.abierto{display:flex}
+.manifiesto-fondo{position:absolute;inset:0;background:rgba(5,8,12,.8)}
+.manifiesto-panel{position:relative;background:#0f1620;border:1px solid #263140;border-top:3px solid #D4A017;max-width:760px;width:100%;max-height:82vh;overflow-y:auto;padding:1.4rem 1.6rem;text-align:left}
+.manifiesto-panel header{position:sticky;top:0;background:#0f1620;display:flex;justify-content:space-between;align-items:center;padding-bottom:.6rem;border-bottom:1px solid #263140;margin-bottom:1rem}
+.manifiesto-panel h3{margin:0;color:#D4A017;font-size:1rem;letter-spacing:.06em}
+.manifiesto-cerrar{background:none;border:1px solid #8a94a6;color:#c3cbd8;width:32px;height:32px;font-size:20px;line-height:1;cursor:pointer;flex:0 0 auto}
+.manifiesto-cerrar:hover{background:#c3cbd8;color:#111}
+.manifiesto-seccion{margin-bottom:1.6rem;scroll-margin-top:70px}
+.manifiesto-seccion h4{color:#D4A017;margin:0 0 .15rem}
+.manifiesto-seccion .rol{color:#8a94a6;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .5rem}
+.manifiesto-seccion p{color:#c3cbd8;line-height:1.6;font-size:.9rem;margin:0 0 .6rem}
+</style>
+
+<section class="manifiesto-banda" aria-labelledby="manifiesto-titulo">
+  <p class="manifiesto-titulo" id="manifiesto-titulo">¿Por qué me apasiona la seguridad?</p>
+  <div class="manifiesto-grid">
+    <button class="manifiesto-card" data-destino="man-victor" type="button">
+      <h4>Víctor</h4><p class="rol">Dirección de Inteligencia Criminológica</p>
+      <p>"Convertir cada incidente en información, y cada información en prevención, para que lo que pasó una vez no se repita."</p>
+      <span class="leer">Leer manifiesto →</span>
+    </button>
+    <button class="manifiesto-card" data-destino="man-tomas" type="button">
+      <h4>Tomás</h4><p class="rol">Dirección de Operaciones Tácticas</p>
+      <p>"La seguridad no es solamente un trabajo que he desempeñado; es una manera de observar, prevenir y actuar."</p>
+      <span class="leer">Leer manifiesto →</span>
+    </button>
+    <button class="manifiesto-card" data-destino="man-angel" type="button">
+      <h4>Ángel</h4><p class="rol">Dirección Estratégica y Jurídica</p>
+      <p>"Enseñar seguridad es otra manera de hacerla: cuando un elemento entiende por qué existe una consigna, deja de obedecerla y empieza a cuidarla."</p>
+      <span class="leer">Leer manifiesto →</span>
+    </button>
+  </div>
+</section>
+
+<div class="manifiesto-modal" id="manifiesto-modal" role="dialog" aria-modal="true" aria-labelledby="manifiesto-modal-titulo" hidden>
+  <div class="manifiesto-fondo"></div>
+  <div class="manifiesto-panel">
+    <header>
+      <h3 id="manifiesto-modal-titulo">¿Por qué me apasiona la seguridad?</h3>
+      <button class="manifiesto-cerrar" id="manifiesto-cerrar" type="button" aria-label="Cerrar">×</button>
+    </header>
+    <article class="manifiesto-seccion" id="man-victor">
+      <h4>Víctor</h4><p class="rol">Dirección de Inteligencia Criminológica</p>
+      <p>La seguridad me gusta porque va más allá de la presencia: incluye prevención, anticipar escenarios, valorar el riesgo en cualquier entorno, analizar actividades para determinar elementos, apostamientos y consignas, y diseñar procedimientos que digan a cada quien qué hacer y cuándo. También implica medir: indicadores, bitácoras y CCTV que validen lo reportado, porque lo que no se mide no se puede corregir.</p>
+      <p>Y cuando un evento vulnera la seguridad, toca investigar: analizar vínculos, revisar registros, entrevistar involucrados e integrar un expediente que sostenga la decisión. Eso es lo que más me gusta de este oficio: convertir cada incidente en información, y cada información en prevención, para que lo que pasó una vez no se repita.</p>
+    </article>
+    <article class="manifiesto-seccion" id="man-tomas">
+      <h4>Tomás</h4><p class="rol">Dirección de Operaciones Tácticas</p>
+      <p>Me gusta la seguridad porque ha sido parte de mi vida desde los 18 años. Empecé desde la operación y aprendí a verla no solo como vigilancia, sino como una forma de anticiparse a los problemas, entender los riesgos y tomar decisiones cuando otros necesitan que alguien resuelva. Pasé por casi todos los peldaños: guardia, supervisor, jefe de turno, coordinador y jefe de operaciones; en cada uno entendí que un protocolo bien escrito no sirve de nada si quien lo ejecuta no comprende por qué existe.</p>
+      <p>Incluso fuera del sector seguí pensando en seguridad y desarrollé protocolos para mis propios compañeros. Aun después de dejar mi último puesto, antiguos colaboradores me buscan para consultar situaciones de trabajo; esa confianza también es una forma de seguridad. Y aunque los problemas aparecen fuera de los manuales, sigo disfrutando resolverlos: en el terreno es donde esta profesión me sigue gustando tanto como el primer día.</p>
+    </article>
+    <article class="manifiesto-seccion" id="man-angel">
+      <h4>Ángel</h4><p class="rol">Dirección Estratégica y Jurídica</p>
+      <p>Siempre tuve la vocación de la seguridad desde los 18 años, como almacenista en una manufacturera de automóviles: ahí aprendí que la prevención empieza en los señalamientos, las rutas y el equipo de protección. Fue hasta 2006, al cursar la carrera de Seguridad Pública, que descubrí mi verdadera vocación.</p>
+      <p>Desde entonces he estado del otro lado del escritorio: formar brigadas, diseñar programas de protección civil, capacitar elementos y mandos. Entendí que la seguridad no solo se ejecuta en el campo: se planea, se documenta y se transmite. Con los años vinieron las maestrías y el doctorado, porque enseñar seguridad es otra manera de hacerla.</p>
+      <p>Cada protocolo que escribes te obliga a pensar en quien lo aplicará a las tres de la mañana; cada persona que capacitas es una familia que también estás cuidando. La seguridad no es un turno: es una manera de cuidar a los demás.</p>
+    </article>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('manifiesto-modal');
+  var cerrar=document.getElementById('manifiesto-cerrar');
+  var fondo=modal.querySelector('.manifiesto-fondo');
+  var ultimoFoco=null;
+  document.querySelectorAll('.manifiesto-card').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      ultimoFoco=btn;
+      modal.hidden=false;modal.classList.add('abierto');
+      document.body.style.overflow='hidden';
+      var d=document.getElementById(btn.dataset.destino);
+      if(d){d.scrollIntoView({behavior:'smooth',block:'start'});}
+      cerrar.focus();
+    });
+  });
+  function cerrarModal(){modal.classList.remove('abierto');modal.hidden=true;document.body.style.overflow='';if(ultimoFoco){ultimoFoco.focus();}}
+  cerrar.addEventListener('click',cerrarModal);
+  fondo.addEventListener('click',cerrarModal);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden){cerrarModal();}});
+})();
+</script>
 <a href="mailto:HUB-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
 Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.
 </footer>
