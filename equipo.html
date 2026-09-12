@@ -46,7 +46,8 @@ a{color:var(--oro2)}
 .manifiesto-head h3{margin:0;color:var(--oro);font-size:1rem;letter-spacing:.06em}
 .manifiesto-cerrar{background:none;border:1px solid var(--acero);color:var(--acero);width:32px;height:32px;font-size:20px;line-height:1;cursor:pointer;flex:0 0 auto}
 .manifiesto-cerrar:hover{background:var(--acero);color:#111}
-.manifiesto-seccion{margin-bottom:1.6rem;scroll-margin-top:70px}
+.manifiesto-seccion{display:none;margin-bottom:1.6rem;scroll-margin-top:70px}
+.manifiesto-seccion.visible{display:block}
 .manifiesto-seccion h4{color:var(--oro);margin:0 0 .15rem}
 .manifiesto-seccion .rol{color:var(--acero);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .5rem}
 .manifiesto-seccion p{color:var(--acero);line-height:1.6;font-size:.9rem;margin:0 0 .6rem}
@@ -77,9 +78,6 @@ a{color:var(--oro2)}
 <div class="card"><h3>Víctor · Inteligencia operativa</h3><p>Criminólogo y criminalista; maestría en perfilación criminal en curso. Especializado en KPIs, procedimientos normalizados de operación, investigación interna y prevención de pérdidas en entornos corporativos, logísticos y retail. Convierte datos y evidencia en decisiones ejecutivas.</p></div>
 </section>
 <section>
-<!-- BANDA MANIFIESTO: queda SOBRE la línea dorada de la nota y SOBRE el botón.
-     Si la prefieres entre la nota y el botón, corta desde <section class="manifiesto-banda">
-     hasta su </section> y pégala después del </div> que cierra la nota. -->
 <section class="manifiesto-banda" aria-labelledby="manifiesto-titulo">
   <p class="manifiesto-titulo" id="manifiesto-titulo">¿Por qué me apasiona la seguridad?</p>
   <div class="manifiesto-grid">
@@ -136,16 +134,23 @@ a{color:var(--oro2)}
 <script>
 (function(){
   var modal=document.getElementById('manifiesto-modal');
+  var panel=modal.querySelector('.manifiesto-panel');
   var cerrar=document.getElementById('manifiesto-cerrar');
   var fondo=modal.querySelector('.manifiesto-fondo');
+  var titulo=document.getElementById('manifiesto-modal-titulo');
+  var secciones=modal.querySelectorAll('.manifiesto-seccion');
   var ultimoFoco=null;
   document.querySelectorAll('.manifiesto-card').forEach(function(btn){
     btn.addEventListener('click',function(){
       ultimoFoco=btn;
+      secciones.forEach(function(s){s.classList.remove('visible');});
+      var d=document.getElementById(btn.dataset.destino);
+      if(d){d.classList.add('visible');}
+      var nombre=btn.querySelector('h4');
+      if(nombre&&titulo){titulo.textContent='¿Por qué me apasiona la seguridad? · '+nombre.textContent;}
       modal.hidden=false;modal.classList.add('abierto');
       document.body.style.overflow='hidden';
-      var d=document.getElementById(btn.dataset.destino);
-      if(d){d.scrollIntoView({behavior:'smooth',block:'start'});}
+      panel.scrollTop=0;
       cerrar.focus();
     });
   });
