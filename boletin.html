@@ -3,73 +3,337 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boletín | Hub de Inteligencia y Gestión en Seguridad</title>
-<meta name="description" content="Boletín de Inteligencia del HUB: curaduría semanal de titulares de seguridad en México con fuente citada y nota de análisis firmada por el equipo.">
+<title>Boletín de Inteligencia | HUB IGS</title>
+<meta name="description" content="Curaduría automática de seguridad en México con fuentes verificadas. Sin trazabilidad no hay confianza.">
 <style>
 :root{--grafito:#14181d;--noche:#1e242b;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
 .wrap{max-width:900px;margin:auto;padding:0 1.2rem}
-header{background:var(--noche);border-bottom:3px solid var(--oro);padding:4rem 1rem;text-align:center}
-header h1{color:var(--oro);font-size:2.1rem;letter-spacing:2px;text-transform:uppercase}
-header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic}
-nav{background:var(--noche);padding:.7rem;text-align:center}
+header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2rem 1rem;text-align:center}
+header h1{color:var(--oro);font-size:1.8rem;letter-spacing:2px;text-transform:uppercase}
+nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100}
 nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--oro)}
-section{padding:2.5rem 0;border-bottom:1px solid #2a313a}
+section{padding:2rem 0;border-bottom:1px solid #2a313a}
 h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem}
-.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
-.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.3rem}
-.card p{color:var(--acero);font-size:.92rem}
-.nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem}
-.cta-container{text-align:center;margin:1.5rem 0 .5rem}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem;transition:transform .2s}
+.card:hover{transform:translateX(4px)}
+.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.5rem;display:flex;justify-content:space-between;align-items:center}
+.card h3 small{font-size:.75rem;color:var(--acero);font-weight:normal}
+.card ul{list-style:none;margin-top:.5rem}
+.card li{padding:.4rem 0;border-bottom:1px solid #2a313a;font-size:.9rem}
+.card li:last-child{border-bottom:none}
+.card a{color:var(--oro2);text-decoration:none}
+.card a:hover{text-decoration:underline}
+.nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
+.loading{color:var(--acero);font-style:italic;text-align:center;padding:2rem}
+.error{color:#ff6b6b;background:#2d1b1b;padding:.8rem;border-left:3px solid #ff6b6b;margin:.5rem 0}
+.cache-indicator{font-size:.7rem;color:var(--acero);margin-left:.5rem}
+.cta-container{text-align:center;margin:1.5rem 0}
 .cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem}
 .cta-button:hover{background:var(--oro2)}
 footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem}
-a{color:var(--oro2)}
+footer a{color:var(--oro2)}
+/* Indicador de carga */
+.skeleton{background:linear-gradient(90deg,var(--noche) 25%,#2a313a 50%,var(--noche) 75%);background-size:200% 100%;animation:loading 1.5s infinite;border-radius:4px;height:20px;margin:.5rem 0}
+@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
 </style>
 </head>
 <body>
+
 <header>
-<h1>Hub de Inteligencia y Gestión en Seguridad</h1>
-<div class="slogan">Prevención estratégica · Protección jurídica · Profesionalismo corporativo</div>
+  <h1>Boletín de Inteligencia HUB IGS</h1>
+  <p style="color:var(--acero);margin-top:.5rem">Curaduría automática con trazabilidad · Actualizado: <span id="last-update">Cargando...</span></p>
 </header>
+
 <nav>
-<a href="index.html">Inicio</a>
-<a href="servicios.html">Servicios</a>
-<a href="evaluacion.html">Evaluación</a>
-<a href="asesoria.html">Asesoría</a>
-<a href="equipo.html">Equipo</a>
-<a href="boletin.html">Boletín</a>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="evaluacion.html">Evaluación</a>
+  <a href="asesoria.html">Asesoría</a>
+  <a href="equipo.html">Equipo</a>
+  <a href="boletin.html">Boletín</a>
 </nav>
+
 <div class="wrap">
-<section>
-<h2>Boletín de Inteligencia</h2>
-<p>El Boletín de Inteligencia es la curaduría del HUB: recopilamos automáticamente los titulares más relevantes de la seguridad en México desde fuentes oficiales y verificables (Google News, SCJN, DOF) y los publicamos como cita con enlace a la fuente original. Cada semana se acompaña de una nota de análisis firmada por el equipo. Sin trazabilidad no hay confianza.</p>
-</section>
-<section>
-<h2>Qué incluye cada entrega</h2>
-<div class="card"><h3>Curaduría con fuente citada</h3><p>Titulares de seguridad pública y privada, crimen y contexto normativo, publicados como cita con enlace directo a la fuente original.</p></div>
-<div class="card"><h3>Nota de análisis semanal</h3><p>Lectura ejecutiva firmada por el equipo: qué significa lo ocurrido para tu operación y qué deberías estar mirando esta semana.</p></div>
-<div class="card"><h3>Categorías fijas</h3><p>Normativa y jurisprudencia (SCJN, DOF) · Incidencia y contexto · Cadena de suministro y comercio seguro · Gobernanza y compliance.</p></div>
-</section>
-<section>
-<h2>Fuentes primarias</h2>
-<div class="card"><h3>Google News</h3><p>Monitoreo automatizado de seguridad pública y privada en México.</p></div>
-<div class="card"><h3>SCJN</h3><p>Comunicados, tesis y criterios jurisdiccionales relevantes.</p></div>
-<div class="card"><h3>DOF</h3><p>Reformas, normas oficiales mexicanas y publicaciones federales.</p></div>
-</section>
-<section>
-<div class="nota">El boletín no reproduce contenido protegido: cita y enlaza a la fuente original, conforme a nuestra regla de trazabilidad y al aviso de privacidad del HUB.</div>
-<div class="cta-container">
-<a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Suscribirme al boletín y al repositorio</a>
+  <section>
+    <h2>Fuentes Prioritarias (Carga Rápida)</h2>
+    <p class="nota">Estas fuentes se cargan primero desde caché (si existe) para máxima velocidad.</p>
+    <div id="priority-sources"></div>
+  </section>
+
+  <section>
+    <h2>Fuentes de Análisis Profundo</h2>
+    <p class="nota">InSightCrime, HoyoDeCrimen y México Evalúa · Carga bajo demanda para no saturar</p>
+    <div id="analysis-sources"></div>
+  </section>
+
+  <section>
+    <h2>Análisis FOR&CAP</h2>
+    <div class="card">
+      <h3>Nota editorial de la semana</h3>
+      <p>Edita este bloque en boletin.html para publicar tu análisis semanal del entorno de seguridad (reformas, criterios, tendencias delictivas).</p>
+      <small>Hub FOR&CAP</small>
+    </div>
+  </section>
+
+  <div class="cta-container">
+    <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Suscribirme al boletín</a>
+  </div>
 </div>
-</section>
-</div>
+
 <footer>
-HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
-<a href="mailto:HUB-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
-Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.
+  HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
+  <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/527295194184">WhatsApp 729 519 4184</a><br>
+  <small>Las fuentes se actualizan automáticamente. Caché: 30 minutos · Sin trazabilidad no hay confianza</small>
 </footer>
+
+<script>
+// ===== CONFIGURACIÓN DE FUENTES =====
+const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'; // Sin API key (límite: 1000/día)
+const CACHE_DURATION = 30 * 60 * 1000; // 30 minutos en milisegundos
+
+const PRIORITY_SOURCES = [
+  {
+    nombre: 'Google News · Seguridad Privada MX',
+    url: 'https://news.google.com/rss/search?q=seguridad+privada+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419',
+    tipo: 'news',
+    prioridad: 1
+  },
+  {
+    nombre: 'Google News · Seguridad Pública MX',
+    url: 'https://news.google.com/rss/search?q=seguridad+p%C3%BAblica+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419',
+    tipo: 'news',
+    prioridad: 2
+  },
+  {
+    nombre: 'SCJN · Comunicados',
+    url: 'https://www.scjn.gob.mx/rss/comunicados',
+    tipo: 'judicial',
+    prioridad: 3
+  }
+];
+
+const ANALYSIS_SOURCES = [
+  {
+    nombre: 'InSightCrime · México',
+    url: 'https://insightcrime.org/es/category/mexico/feed/',
+    tipo: 'analysis',
+    descripcion: 'Crimen organizado y seguridad en México'
+  },
+  {
+    nombre: 'HoyoDeCrimen · Datos',
+    url: 'https://hoyodecrimen.com',
+    tipo: 'data',
+    descripcion: 'Visualización de incidencia delictiva',
+    esWeb: true // No es RSS tradicional
+  },
+  {
+    nombre: 'México Evalúa · Justicia',
+    url: 'https://mexicoevalua.org',
+    tipo: 'research',
+    descripcion: 'Análisis del sistema de justicia penal'
+  }
+];
+
+// ===== SISTEMA DE CACHÉ =====
+function getCache(key) {
+  const cached = localStorage.getItem(`hub_boletin_${key}`);
+  if (!cached) return null;
+  
+  const { data, timestamp } = JSON.parse(cached);
+  if (Date.now() - timestamp > CACHE_DURATION) {
+    localStorage.removeItem(`hub_boletin_${key}`);
+    return null;
+  }
+  return data;
+}
+
+function setCache(key, data) {
+  localStorage.setItem(`hub_boletin_${key}`, JSON.stringify({
+    data,
+    timestamp: Date.now()
+  }));
+}
+
+// ===== FETCH OPTIMIZADO =====
+async function fetchRSS(url, sourceName, useCache = true) {
+  // Intentar caché primero
+  if (useCache) {
+    const cached = getCache(url);
+    if (cached) {
+      console.log(`✓ Caché: ${sourceName}`);
+      return cached;
+    }
+  }
+
+  try {
+    const apiUrl = `${RSS2JSON_API}?rss_url=${encodeURIComponent(url)}&count=5`;
+    const response = await fetch(apiUrl, { 
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    
+    const data = await response.json();
+    
+    if (data.status === 'ok' && data.items && data.items.length > 0) {
+      // Guardar en caché
+      setCache(url, data.items);
+      console.log(`✓ Fresh: ${sourceName}`);
+      return data.items;
+    }
+    
+    return [];
+  } catch (error) {
+    console.error(`✗ Error en ${sourceName}:`, error.message);
+    return [];
+  }
+}
+
+// ===== RENDERIZADO OPTIMIZADO =====
+function createCard(sourceName, items, tipo, lastUpdate = null) {
+  if (!items || items.length === 0) {
+    return `
+      <div class="card">
+        <h3>${sourceName} <small>Sin datos</small></h3>
+        <p class="error">No se pudieron cargar los datos. Intenta recargar la página.</p>
+      </div>
+    `;
+  }
+
+  const cacheBadge = lastUpdate ? `<span class="cache-indicator">· Caché</span>` : '';
+  
+  let html = `
+    <div class="card">
+      <h3>
+        ${sourceName}
+        <small>${items[0].pubDate ? new Date(items[0].pubDate).toLocaleDateString('es-MX', {day: '2-digit', month: 'short'}) : 'Reciente'} ${cacheBadge}</small>
+      </h3>
+      <ul>
+  `;
+  
+  items.slice(0, 5).forEach(item => {
+    const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('es-MX', {day: 'numeric', month: 'short'}) : '';
+    const snippet = item.description ? item.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...' : '';
+    
+    html += `
+      <li>
+        <a href="${item.link}" target="_blank" rel="noopener">
+          <strong>${item.title}</strong><br>
+          <small style="color:var(--acero)">${snippet}</small><br>
+          <small style="color:var(--oro)">${date}</small>
+        </a>
+      </li>
+    `;
+  });
+  
+  html += '</ul></div>';
+  return html;
+}
+
+function createWebCard(sourceName, url, descripcion) {
+  return `
+    <div class="card">
+      <h3>${sourceName} <small>Visitar sitio</small></h3>
+      <p style="color:var(--acero);margin-bottom:.5rem">${descripcion}</p>
+      <a href="${url}" target="_blank" rel="noopener" class="cta-button" style="padding:.5rem 1rem;font-size:.85rem">
+        Acceder a datos →
+      </a>
+    </div>
+  `;
+}
+
+// ===== CARGA ESCALONADA =====
+async function loadPrioritySources() {
+  const container = document.getElementById('priority-sources');
+  container.innerHTML = '<div class="loading">Cargando fuentes prioritarias...</div>';
+  
+  // Cargar en paralelo pero con límite de concurrencia
+  const results = await Promise.allSettled(
+    PRIORITY_SOURCES.map(async (source) => {
+      const items = await fetchRSS(source.url, source.nombre, true);
+      return { source, items };
+    })
+  );
+  
+  let html = '';
+  results.forEach((result, index) => {
+    if (result.status === 'fulfilled') {
+      const { source, items } = result.value;
+      const cached = getCache(source.url);
+      html += createCard(source.nombre, items, source.tipo, cached);
+    }
+  });
+  
+  container.innerHTML = html || '<p class="error">No se pudieron cargar las fuentes prioritarias.</p>';
+  updateLastUpdateTime();
+}
+
+async function loadAnalysisSources() {
+  const container = document.getElementById('analysis-sources');
+  container.innerHTML = '<div class="loading">Cargando fuentes de análisis...</div>';
+  
+  // InSightCrime tiene RSS
+  const insightCrimeItems = await fetchRSS(
+    ANALYSIS_SOURCES[0].url,
+    ANALYSIS_SOURCES[0].nombre,
+    true
+  );
+  
+  let html = createCard(
+    ANALYSIS_SOURCES[0].nombre,
+    insightCrimeItems,
+    ANALYSIS_SOURCES[0].tipo
+  );
+  
+  // HoyoDeCrimen y México Evalúa son sitios web (no RSS)
+  html += createWebCard(
+    ANALYSIS_SOURCES[1].nombre,
+    ANALYSIS_SOURCES[1].url,
+    ANALYSIS_SOURCES[1].descripcion
+  );
+  
+  html += createWebCard(
+    ANALYSIS_SOURCES[2].nombre,
+    ANALYSIS_SOURCES[2].url,
+    ANALYSIS_SOURCES[2].descripcion
+  );
+  
+  container.innerHTML = html;
+}
+
+function updateLastUpdateTime() {
+  const now = new Date();
+  document.getElementById('last-update').textContent = 
+    now.toLocaleString('es-MX', { 
+      day: '2-digit', 
+      month: '2-digit', 
+      year: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+}
+
+// ===== INICIALIZACIÓN =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Cargar fuentes prioritarias inmediatamente
+  loadPrioritySources();
+  
+  // Cargar fuentes de análisis después (no bloquea)
+  setTimeout(() => loadAnalysisSources(), 500);
+  
+  // Forzar actualización de caché cada 30 minutos si la página está abierta
+  setInterval(() => {
+    console.log(' Actualizando caché en segundo plano...');
+    PRIORITY_SOURCES.forEach(source => {
+      fetchRSS(source.url, source.nombre, false);
+    });
+  }, CACHE_DURATION);
+});
+</script>
+
 </body>
 </html>
