@@ -12,39 +12,36 @@ body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(-
 .wrap{max-width:900px;margin:auto;padding:0 1.2rem}
 header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2rem 1rem;text-align:center}
 header h1{color:var(--oro);font-size:1.8rem;letter-spacing:2px;text-transform:uppercase}
+header p{color:var(--acero);margin-top:.5rem;font-size:.9rem}
 nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100}
 nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--oro)}
 section{padding:2rem 0;border-bottom:1px solid #2a313a}
 h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem}
-.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem;transition:transform .2s}
-.card:hover{transform:translateX(4px)}
-.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.5rem;display:flex;justify-content:space-between;align-items:center}
-.card h3 small{font-size:.75rem;color:var(--acero);font-weight:normal}
-.card ul{list-style:none;margin-top:.5rem}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
+.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.5rem}
+.card ul{list-style:none}
 .card li{padding:.4rem 0;border-bottom:1px solid #2a313a;font-size:.9rem}
 .card li:last-child{border-bottom:none}
 .card a{color:var(--oro2);text-decoration:none}
 .card a:hover{text-decoration:underline}
 .nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
 .loading{color:var(--acero);font-style:italic;text-align:center;padding:2rem}
-.error{color:#ff6b6b;background:#2d1b1b;padding:.8rem;border-left:3px solid #ff6b6b;margin:.5rem 0}
-.cache-indicator{font-size:.7rem;color:var(--acero);margin-left:.5rem}
+.error{color:#ff6b6b;background:#2d1b1b;padding:.8rem;border-left:3px solid #ff6b6b;margin:.5rem 0;font-size:.9rem}
 .cta-container{text-align:center;margin:1.5rem 0}
-.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem}
+.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px}
 .cta-button:hover{background:var(--oro2)}
 footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem}
 footer a{color:var(--oro2)}
-/* Indicador de carga */
-.skeleton{background:linear-gradient(90deg,var(--noche) 25%,#2a313a 50%,var(--noche) 75%);background-size:200% 100%;animation:loading 1.5s infinite;border-radius:4px;height:20px;margin:.5rem 0}
-@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.web-link{display:inline-block;background:#2a313a;color:var(--oro2);padding:.6rem 1.2rem;text-decoration:none;border-radius:4px;margin-top:.5rem;font-size:.85rem}
+.web-link:hover{background:var(--oro);color:var(--grafito)}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Boletín de Inteligencia HUB IGS</h1>
-  <p style="color:var(--acero);margin-top:.5rem">Curaduría automática con trazabilidad · Actualizado: <span id="last-update">Cargando...</span></p>
+  <p>Curaduría automática con trazabilidad · Actualizado: <span id="last-update">Cargando...</span></p>
 </header>
 
 <nav>
@@ -58,23 +55,22 @@ footer a{color:var(--oro2)}
 
 <div class="wrap">
   <section>
-    <h2>Fuentes Prioritarias (Carga Rápida)</h2>
-    <p class="nota">Estas fuentes se cargan primero desde caché (si existe) para máxima velocidad.</p>
-    <div id="priority-sources"></div>
+    <h2>Fuentes Prioritarias</h2>
+    <p class="nota">Noticias de seguridad en México (Google News + SCJN)</p>
+    <div id="fuentes"></div>
   </section>
 
   <section>
     <h2>Fuentes de Análisis Profundo</h2>
-    <p class="nota">InSightCrime, HoyoDeCrimen y México Evalúa · Carga bajo demanda para no saturar</p>
-    <div id="analysis-sources"></div>
+    <p class="nota">InSightCrime, HoyoDeCrimen y México Evalúa</p>
+    <div id="analisis"></div>
   </section>
 
   <section>
     <h2>Análisis FOR&CAP</h2>
     <div class="card">
       <h3>Nota editorial de la semana</h3>
-      <p>Edita este bloque en boletin.html para publicar tu análisis semanal del entorno de seguridad (reformas, criterios, tendencias delictivas).</p>
-      <small>Hub FOR&CAP</small>
+      <p>Edita este bloque en boletin.html para publicar tu análisis semanal del entorno de seguridad.</p>
     </div>
   </section>
 
@@ -85,146 +81,87 @@ footer a{color:var(--oro2)}
 
 <footer>
   HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
-  <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/527295194184">WhatsApp 729 519 4184</a><br>
-  <small>Las fuentes se actualizan automáticamente. Caché: 30 minutos · Sin trazabilidad no hay confianza</small>
+  <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
+  <small>Las fuentes se actualizan automáticamente · Sin trazabilidad no hay confianza</small>
 </footer>
 
 <script>
-// ===== CONFIGURACIÓN DE FUENTES =====
-const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'; // Sin API key (límite: 1000/día)
-const CACHE_DURATION = 30 * 60 * 1000; // 30 minutos en milisegundos
-
-const PRIORITY_SOURCES = [
+// ===== FUENTES RSS (usando rss2json.com) =====
+const FUENTES = [
   {
     nombre: 'Google News · Seguridad Privada MX',
-    url: 'https://news.google.com/rss/search?q=seguridad+privada+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419',
-    tipo: 'news',
-    prioridad: 1
+    rssUrl: 'https://news.google.com/rss/search?q=seguridad+privada+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'
   },
   {
     nombre: 'Google News · Seguridad Pública MX',
-    url: 'https://news.google.com/rss/search?q=seguridad+p%C3%BAblica+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419',
-    tipo: 'news',
-    prioridad: 2
+    rssUrl: 'https://news.google.com/rss/search?q=seguridad+p%C3%BAblica+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'
   },
   {
     nombre: 'SCJN · Comunicados',
-    url: 'https://www.scjn.gob.mx/rss/comunicados',
-    tipo: 'judicial',
-    prioridad: 3
+    rssUrl: 'https://www.scjn.gob.mx/rss/comunicados'
   }
 ];
 
-const ANALYSIS_SOURCES = [
+// ===== FUENTES WEB (sin RSS) =====
+const ANALISIS = [
   {
     nombre: 'InSightCrime · México',
-    url: 'https://insightcrime.org/es/category/mexico/feed/',
-    tipo: 'analysis',
+    url: 'https://insightcrime.org/es/category/mexico/',
     descripcion: 'Crimen organizado y seguridad en México'
   },
   {
-    nombre: 'HoyoDeCrimen · Datos',
+    nombre: 'HoyoDeCrimen',
     url: 'https://hoyodecrimen.com',
-    tipo: 'data',
-    descripcion: 'Visualización de incidencia delictiva',
-    esWeb: true // No es RSS tradicional
+    descripcion: 'Visualización de incidencia delictiva'
   },
   {
-    nombre: 'México Evalúa · Justicia',
+    nombre: 'México Evalúa',
     url: 'https://mexicoevalua.org',
-    tipo: 'research',
     descripcion: 'Análisis del sistema de justicia penal'
   }
 ];
 
-// ===== SISTEMA DE CACHÉ =====
-function getCache(key) {
-  const cached = localStorage.getItem(`hub_boletin_${key}`);
-  if (!cached) return null;
+// ===== CARGA CON RSS2JSON =====
+async function cargarFeed(rssUrl) {
+  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=5`;
   
-  const { data, timestamp } = JSON.parse(cached);
-  if (Date.now() - timestamp > CACHE_DURATION) {
-    localStorage.removeItem(`hub_boletin_${key}`);
-    return null;
-  }
-  return data;
-}
-
-function setCache(key, data) {
-  localStorage.setItem(`hub_boletin_${key}`, JSON.stringify({
-    data,
-    timestamp: Date.now()
-  }));
-}
-
-// ===== FETCH OPTIMIZADO =====
-async function fetchRSS(url, sourceName, useCache = true) {
-  // Intentar caché primero
-  if (useCache) {
-    const cached = getCache(url);
-    if (cached) {
-      console.log(`✓ Caché: ${sourceName}`);
-      return cached;
-    }
-  }
-
   try {
-    const apiUrl = `${RSS2JSON_API}?rss_url=${encodeURIComponent(url)}&count=5`;
-    const response = await fetch(apiUrl, { 
-      method: 'GET',
-      headers: { 'Accept': 'application/json' }
-    });
-    
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error('HTTP ' + response.status);
     
     const data = await response.json();
     
     if (data.status === 'ok' && data.items && data.items.length > 0) {
-      // Guardar en caché
-      setCache(url, data.items);
-      console.log(`✓ Fresh: ${sourceName}`);
       return data.items;
     }
     
     return [];
   } catch (error) {
-    console.error(`✗ Error en ${sourceName}:`, error.message);
+    console.error('Error cargando feed:', error);
     return [];
   }
 }
 
-// ===== RENDERIZADO OPTIMIZADO =====
-function createCard(sourceName, items, tipo, lastUpdate = null) {
+// ===== RENDERIZADO =====
+function crearTarjeta(fuente, items) {
   if (!items || items.length === 0) {
     return `
       <div class="card">
-        <h3>${sourceName} <small>Sin datos</small></h3>
+        <h3>${fuente.nombre}</h3>
         <p class="error">No se pudieron cargar los datos. Intenta recargar la página.</p>
       </div>
     `;
   }
 
-  const cacheBadge = lastUpdate ? `<span class="cache-indicator">· Caché</span>` : '';
+  let html = `<div class="card"><h3>${fuente.nombre}</h3><ul>`;
   
-  let html = `
-    <div class="card">
-      <h3>
-        ${sourceName}
-        <small>${items[0].pubDate ? new Date(items[0].pubDate).toLocaleDateString('es-MX', {day: '2-digit', month: 'short'}) : 'Reciente'} ${cacheBadge}</small>
-      </h3>
-      <ul>
-  `;
-  
-  items.slice(0, 5).forEach(item => {
-    const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('es-MX', {day: 'numeric', month: 'short'}) : '';
-    const snippet = item.description ? item.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...' : '';
-    
+  items.forEach(item => {
+    const fecha = item.pubDate ? new Date(item.pubDate).toLocaleDateString('es-MX', {day: 'numeric', month: 'short'}) : '';
     html += `
       <li>
         <a href="${item.link}" target="_blank" rel="noopener">
           <strong>${item.title}</strong><br>
-          <small style="color:var(--acero)">${snippet}</small><br>
-          <small style="color:var(--oro)">${date}</small>
+          <small style="color:var(--acero)">${fecha}</small>
         </a>
       </li>
     `;
@@ -234,105 +171,44 @@ function createCard(sourceName, items, tipo, lastUpdate = null) {
   return html;
 }
 
-function createWebCard(sourceName, url, descripcion) {
+function crearWebCard(fuente) {
   return `
     <div class="card">
-      <h3>${sourceName} <small>Visitar sitio</small></h3>
-      <p style="color:var(--acero);margin-bottom:.5rem">${descripcion}</p>
-      <a href="${url}" target="_blank" rel="noopener" class="cta-button" style="padding:.5rem 1rem;font-size:.85rem">
-        Acceder a datos →
-      </a>
+      <h3>${fuente.nombre}</h3>
+      <p style="color:var(--acero);margin-bottom:.5rem">${fuente.descripcion}</p>
+      <a href="${fuente.url}" target="_blank" rel="noopener" class="web-link">Acceder al sitio →</a>
     </div>
   `;
 }
 
-// ===== CARGA ESCALONADA =====
-async function loadPrioritySources() {
-  const container = document.getElementById('priority-sources');
-  container.innerHTML = '<div class="loading">Cargando fuentes prioritarias...</div>';
-  
-  // Cargar en paralelo pero con límite de concurrencia
-  const results = await Promise.allSettled(
-    PRIORITY_SOURCES.map(async (source) => {
-      const items = await fetchRSS(source.url, source.nombre, true);
-      return { source, items };
-    })
-  );
+// ===== CARGA INICIAL =====
+async function cargarBoletin() {
+  const contenedor = document.getElementById('fuentes');
+  contenedor.innerHTML = '<div class="loading">Cargando fuentes de inteligencia...</div>';
   
   let html = '';
-  results.forEach((result, index) => {
-    if (result.status === 'fulfilled') {
-      const { source, items } = result.value;
-      const cached = getCache(source.url);
-      html += createCard(source.nombre, items, source.tipo, cached);
-    }
+  
+  for (const fuente of FUENTES) {
+    const items = await cargarFeed(fuente.rssUrl);
+    html += crearTarjeta(fuente, items);
+  }
+  
+  contenedor.innerHTML = html || '<p class="error">No se pudieron cargar las fuentes.</p>';
+  
+  // Cargar fuentes de análisis
+  const analisisContainer = document.getElementById('analisis');
+  let analisisHtml = '';
+  ANALISIS.forEach(fuente => {
+    analisisHtml += crearWebCard(fuente);
   });
+  analisisContainer.innerHTML = analisisHtml;
   
-  container.innerHTML = html || '<p class="error">No se pudieron cargar las fuentes prioritarias.</p>';
-  updateLastUpdateTime();
+  // Actualizar timestamp
+  document.getElementById('last-update').textContent = new Date().toLocaleString('es-MX');
 }
 
-async function loadAnalysisSources() {
-  const container = document.getElementById('analysis-sources');
-  container.innerHTML = '<div class="loading">Cargando fuentes de análisis...</div>';
-  
-  // InSightCrime tiene RSS
-  const insightCrimeItems = await fetchRSS(
-    ANALYSIS_SOURCES[0].url,
-    ANALYSIS_SOURCES[0].nombre,
-    true
-  );
-  
-  let html = createCard(
-    ANALYSIS_SOURCES[0].nombre,
-    insightCrimeItems,
-    ANALYSIS_SOURCES[0].tipo
-  );
-  
-  // HoyoDeCrimen y México Evalúa son sitios web (no RSS)
-  html += createWebCard(
-    ANALYSIS_SOURCES[1].nombre,
-    ANALYSIS_SOURCES[1].url,
-    ANALYSIS_SOURCES[1].descripcion
-  );
-  
-  html += createWebCard(
-    ANALYSIS_SOURCES[2].nombre,
-    ANALYSIS_SOURCES[2].url,
-    ANALYSIS_SOURCES[2].descripcion
-  );
-  
-  container.innerHTML = html;
-}
-
-function updateLastUpdateTime() {
-  const now = new Date();
-  document.getElementById('last-update').textContent = 
-    now.toLocaleString('es-MX', { 
-      day: '2-digit', 
-      month: '2-digit', 
-      year: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit' 
-    });
-}
-
-// ===== INICIALIZACIÓN =====
-document.addEventListener('DOMContentLoaded', () => {
-  // Cargar fuentes prioritarias inmediatamente
-  loadPrioritySources();
-  
-  // Cargar fuentes de análisis después (no bloquea)
-  setTimeout(() => loadAnalysisSources(), 500);
-  
-  // Forzar actualización de caché cada 30 minutos si la página está abierta
-  setInterval(() => {
-    console.log(' Actualizando caché en segundo plano...');
-    PRIORITY_SOURCES.forEach(source => {
-      fetchRSS(source.url, source.nombre, false);
-    });
-  }, CACHE_DURATION);
-});
+// Iniciar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', cargarBoletin);
 </script>
 
 </body>
