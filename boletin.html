@@ -1,87 +1,315 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#121212">
-<title>HUB IGS · Tarjeta digital</title>
-<meta name="description" content="Hub de Inteligencia y Gestión en Seguridad. Contraloría de pérdida interna y auditoría forense de proveedores. Sin trazabilidad no hay confianza.">
+<title>Boletín de Inteligencia | HUB IGS</title>
+<meta name="description" content="Dashboard de inteligencia con datos, cifras y estadísticas de seguridad en México. Análisis trazable del SESNSP.">
 <style>
-  :root{--grafito:#121212;--oro:#C9A227;--plata1:#E6E6E6;--plata2:#C0C0C0;--plata3:#808080}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--grafito);color:var(--plata1);font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center}
-  main{width:100%;max-width:480px;padding:32px 20px 48px}
-  section{text-align:center;margin-bottom:40px}
-  img.escudo{width:150px;height:auto;margin-bottom:16px}
-  h1{color:var(--oro);font-size:26px;letter-spacing:1px;line-height:1.25}
-  .sub{color:var(--plata2);font-size:15px;margin-top:6px}
-  .valor{color:var(--oro);font-size:14px;font-style:italic;margin-top:14px;line-height:1.5}
-  h2{color:var(--oro);font-size:18px;letter-spacing:2px;margin-bottom:16px}
-  a.btn{display:block;background:#1A1A1A;border:1px solid var(--plata3);border-radius:12px;color:var(--plata1);text-decoration:none;padding:16px;margin-bottom:12px;font-size:16px;transition:all 0.2s}
-  a.btn:active{border-color:var(--oro);color:var(--oro)}
-  a.btn-destacado{border:2px solid var(--oro);color:var(--oro);font-weight:bold;background:#1F1F1F}
-  a.btn-destacado:active{background:var(--oro);color:var(--grafito)}
-  ul{list-style:none;text-align:left}
-  li{margin-bottom:14px;font-size:15px;line-height:1.45}
-  li b{display:block;color:var(--plata1)}
-  li span{color:var(--plata2)}
-  .lema{color:var(--oro);font-size:20px;font-weight:bold;letter-spacing:1px;line-height:1.4}
-  .url{color:var(--plata3);font-size:12px;margin-top:10px;word-break:break-all}
-  footer{color:var(--plata3);font-size:11px;text-align:center;line-height:1.6}
+:root{--grafito:#14181d;--noche:#1e242b;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
+.wrap{max-width:1200px;margin:auto;padding:0 1.2rem}
+header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2.5rem 1rem;text-align:center}
+header h1{color:var(--oro);font-size:2.1rem;letter-spacing:2px;text-transform:uppercase}
+header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic}
+nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100;border-bottom:1px solid #2a313a}
+nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+nav a:hover{color:var(--oro)}
+section{padding:2.5rem 0;border-bottom:1px solid #2a313a}
+h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.3rem}
+h3{color:var(--oro2);font-size:1.05rem;margin-bottom:.6rem}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
+.card:hover{transform:translateX(4px);transition:transform .2s}
+.nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
+.cta-container{text-align:center;margin:2rem 0}
+.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px}
+.cta-button:hover{background:var(--oro2)}
+footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:1px solid #2a313a;margin-top:2rem}
+footer a{color:var(--oro2)}
+
+/* DASHBOARD DE DATOS */
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.stat-card{background:var(--noche);border:1px solid var(--oro);border-radius:6px;padding:1rem;text-align:center}
+.stat-card h4{color:var(--oro2);font-size:.9rem;margin-bottom:.5rem;text-transform:uppercase}
+.stat-number{font-size:2.5rem;font-weight:bold;color:var(--oro);margin:.5rem 0}
+.stat-trend{font-size:.85rem;padding:.3rem .6rem;border-radius:3px;display:inline-block;margin-top:.5rem}
+.trend-down{background:#1b4332;color:#4cc9a0}
+.trend-up{background:#4a1c1c;color:#ff6b6b}
+.chart-container{background:var(--noche);border:1px solid var(--oro);border-radius:6px;padding:1rem;margin:1rem 0}
+.chart-container img{width:100%;border-radius:4px}
+.data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+.data-table th{background:var(--oro);color:var(--grafito);padding:.8rem;text-align:left;font-weight:bold}
+.data-table td{padding:.6rem;border-bottom:1px solid #2a313a}
+.data-table tr:hover{background:#2a313a}
+.badge{display:inline-block;background:var(--oro);color:var(--grafito);padding:.2rem .6rem;font-size:.7rem;font-weight:bold;border-radius:3px;margin-right:.5rem}
+.source-link{color:var(--oro2);text-decoration:none;font-size:.85rem}
+.source-link:hover{color:var(--oro);text-decoration:underline}
 </style>
 </head>
 <body>
-<main>
+
+<header>
+  <h1>Boletín de Inteligencia HUB IGS</h1>
+  <div class="slogan">Dashboard de datos · Estadísticas trazables · Análisis delictivo · Sin trazabilidad no hay confianza</div>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="evaluacion.html">Evaluación</a>
+  <a href="asesoria.html">Asesoría</a>
+  <a href="equipo.html">Equipo</a>
+  <a href="boletin.html">Boletín</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- SECCIÓN 1: DASHBOARD PRINCIPAL -->
   <section>
-    <img class="escudo" src="escudo.png" alt="Escudo HUB IGS" onerror="this.style.display='none'">
-    <h1>HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD</h1>
-    <p class="sub">Consultoría</p>
-    <p class="valor">Contraloría de pérdida interna y auditoría forense de proveedores: seguridad con trazabilidad auditable.</p>
-  </section>
-  
-  <section>
-    <h2>CONTACTO DIRECTO</h2>
-    <a class="btn" href="https://wa.me/525658346378?text=Hola%20HUB%20IGS%2C%20escane%C3%A9%20su%20tarjeta%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n">💬 WhatsApp directo</a>
-    <a class="btn" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">✉️ Formulario de contacto</a>
-    <a class="btn" href="https://youtube.com/@HUB-forcap" target="_blank" rel="noopener">▶️ Ver canal de YouTube</a>
-    <a class="btn" href="HUB_IGS.vcf" download>📇 Guardar en contactos</a>
+    <h2>📊 Dashboard de Incidencia Delictiva · México</h2>
+    <p class="nota">Datos procesados del SESNSP · Reporte julio 2026 · Fuente: <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" class="source-link">lapanquecita/incidencia-delictiva</a></p>
     
-    <!-- NUEVO 5º BOTÓN: ENLACE AL BOLETÍN DE INTELIGENCIA -->
-    <a class="btn btn-destacado" href="https://hub-inteligencia-gestion-seguridad.github.io/consultoria-for-cap/boletin.html" target="_blank" rel="noopener">📊 Ver Boletín de Inteligencia</a>
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <h4>Homicidio Doloso</h4>
+        <div class="stat-number">1,149</div>
+        <div class="stat-trend trend-down">🔽 -33.78%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Feminicidio</h4>
+        <div class="stat-number">60</div>
+        <div class="stat-trend trend-up">🔼 +3.45%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Secuestro</h4>
+        <div class="stat-number">24</div>
+        <div class="stat-trend trend-down">🔽 -36.84%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Extorsión</h4>
+        <div class="stat-number">961</div>
+        <div class="stat-trend trend-up">🔼 +3.67%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Lesiones Dolosas</h4>
+        <div class="stat-number">13,800</div>
+        <div class="stat-trend trend-up">🔼 +6.23%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Abuso Sexual</h4>
+        <div class="stat-number">2,790</div>
+        <div class="stat-trend trend-down">🔽 -1.12%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>📈 Análisis de Tendencias (12 meses)</h3>
+      <p style="color:var(--acero);margin-bottom:1rem">Las gráficas muestran la evolución mensual de cada delito. Un registro puede tener más de una víctima.</p>
+      
+      <div class="chart-container">
+        <p style="text-align:center;color:var(--oro2);margin-bottom:1rem"><strong>Gráficas disponibles en el repositorio:</strong></p>
+        <ul style="list-style:none;padding:0">
+          <li style="padding:.5rem 0;border-bottom:1px solid #2a313a">
+            <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" class="source-link">
+              📊 Ver gráficas completas de homicidio, feminicidio, secuestro, extorsión →
+            </a>
+          </li>
+          <li style="padding:.5rem 0;border-bottom:1px solid #2a313a">
+            <a href="https://hoyodecrimen.com" target="_blank" rel="noopener" class="source-link">
+              🗺️ Mapas interactivos por entidad y municipio →
+            </a>
+          </li>
+          <li style="padding:.5rem 0">
+            <a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener" class="source-link">
+               Descargar bases de datos oficiales del SESNSP →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
+  <!-- SECCIÓN 2: TABLA COMPARATIVA -->
   <section>
-    <h2>QUÉ HACEMOS</h2>
-    <ul>
-      <li><b>Dirección Estratégica y Jurídica</b><span>Blindaje normativo y gestión de crisis.</span></li>
-      <li><b>Dirección de Inteligencia Criminológica</b><span>Investigación forense y KPIs con folio.</span></li>
-      <li><b>Dirección de Operaciones Tácticas</b><span>Contraloría de campo y de proveedores.</span></li>
-      <li><b>Dirección de Formación y Cultura</b><span>Capacitación DC-3 y prevención de violencia.</span></li>
-    </ul>
+    <h2>📋 Tabla Comparativa · Delitos de Alto Impacto</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Delito</th>
+          <th>Julio 2026</th>
+          <th>Tendencia</th>
+          <th>Variación 12 meses</th>
+          <th>Lectura HUB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge">ALTO</span>Homicidio doloso</td>
+          <td><strong>1,149</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-33.78%</td>
+          <td style="color:var(--acero)">Reducción significativa</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#ff6b6b;color:#fff">CRÍTICO</span>Feminicidio</td>
+          <td><strong>60</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+3.45%</td>
+          <td style="color:var(--acero)">Alerta: tendencia al alza</td>
+        </tr>
+        <tr>
+          <td><span class="badge">ALTO</span>Secuestro</td>
+          <td><strong>24</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-36.84%</td>
+          <td style="color:var(--acero)">Caída importante</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#f0d48a;color:#14181d">MEDIO</span>Extorsión</td>
+          <td><strong>961</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+3.67%</td>
+          <td style="color:var(--acero)">Presión a comercios</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#f0d48a;color:#14181d">MEDIO</span>Lesiones dolosas</td>
+          <td><strong>13,800</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+6.23%</td>
+          <td style="color:var(--acero)">Violencia no letal ↑</td>
+        </tr>
+        <tr>
+          <td><span class="badge">ALTO</span>Abuso sexual</td>
+          <td><strong>2,790</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-1.12%</td>
+          <td style="color:var(--acero)">Ligera reducción</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
+  <!-- SECCIÓN 3: ANÁLISIS FOR&CAP -->
   <section>
-    <p class="lema">"SIN TRAZABILIDAD<br>NO HAY CONFIANZA"</p>
-    <a class="btn" id="compartir" href="#">🔗 Compartir esta tarjeta</a>
-    <p class="url" id="miurl"></p>
+    <h2>🔍 Análisis FOR&CAP · Lectura Ejecutiva</h2>
+    <div class="card">
+      <h3>Hallazgo Crítico · Julio 2026</h3>
+      <p style="color:var(--texto);line-height:1.8;margin-bottom:1rem">
+        <strong style="color:var(--oro)">Cambio de modalidad delictiva:</strong> Mientras homicidio doloso (-33.78%) y secuestro (-36.84%) 
+        muestran descensos significativos, <strong style="color:var(--oro2)">lesiones dolosas (+6.23%) y extorsión (+3.67%) van en aumento</strong>. 
+        Esto sugiere una transformación en la operación delictiva: menor letalidad pero mayor violencia instrumental y presión económica sobre el sector empresarial.
+      </p>
+      <p style="color:var(--acero);font-size:.9rem;line-height:1.6;margin-bottom:1rem">
+        <strong>Implicación para empresas:</strong> Los protocolos de seguridad deben reforzar:
+      </p>
+      <ul style="color:var(--acero);padding-left:1.5rem;line-height:1.8">
+        <li>Protección de puntos de venta contra extorsión</li>
+        <li>Capacitación en manejo de amenazas no letales</li>
+        <li>Protocolos de respuesta a lesiones en instalaciones</li>
+        <li>Monitoreo de corredores logísticos con alta incidencia de lesiones</li>
+      </ul>
+      <small style="color:var(--oro);display:block;margin-top:1rem">Hub FOR&CAP · Metodología de inteligencia aplicada · Septiembre 2026</small>
+    </div>
   </section>
 
-  <footer>HUB IGS · Corredor Toluca–Lerma, México<br>TARJETA-2026-001-D · Paleta PAL-2026-001 v3</footer>
-</main>
+  <!-- SECCIÓN 4: FUENTES DE DATOS -->
+  <section>
+    <h2>📚 Fuentes de Datos y Visualización</h2>
+    
+    <div class="card">
+      <h3>Repositorios GitHub con Dashboards</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📊 lapanquecita/incidencia-delictiva
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Scripts Python + gráficas automáticas de tendencias delictivas. Datos del SESNSP procesados.</p>
+        </li>
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://github.com/Beelzabi/crimen_mex" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+             Beelzabi/crimen_mex
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Datasets CSV unificados del SESNSP listos para análisis.</p>
+        </li>
+        <li style="padding:.8rem 0">
+          <a href="https://github.com/crosasr/hexseg-mx" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            🗺️ crosasr/hexseg-mx (SafeHex MX)
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Business Intelligence geoespacial con hexágonos H3. Mapas de calor delictivo.</p>
+        </li>
+      </ul>
+    </div>
 
-<script>
-  document.getElementById('miurl').textContent = location.href;
-  document.getElementById('compartir').addEventListener('click', function(e){
-    e.preventDefault();
-    var url = location.href;
-    if (navigator.share) { 
-      navigator.share({title:'HUB IGS · Tarjeta digital', url:url}); 
-    } else if (navigator.clipboard) { 
-      navigator.clipboard.writeText(url).then(function(){ alert('Dirección copiada al portapapeles'); }); 
-    } else { 
-      prompt('Copia la dirección:', url); 
-    }
-  });
-</script>
+    <div class="card">
+      <h3>Plataformas de Visualización Interactiva</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://hoyodecrimen.com" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            🟢 HoyoDeCrimen
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Mapas interactivos con filtros por delito, entidad y período. Reportes mensuales descargables.</p>
+        </li>
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📊 SESNSP · Datos Abiertos
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Fuente primaria oficial. Descarga de bases de datos estatales, municipales y de víctimas.</p>
+        </li>
+        <li style="padding:.8rem 0">
+          <a href="https://mexicoevalua.org" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📈 México Evalúa · Data Justicia
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Análisis del sistema de justicia penal, impunidad y flujo de casos.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: RECOMENDACIONES -->
+  <section>
+    <h2>💡 Recomendaciones para el Sector Empresarial</h2>
+    <div class="dashboard-grid">
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">PyMEs Medianas</h4>
+        <p style="color:var(--acero);font-size:.9rem">Priorizar protocolos anti-extorsión y capacitación en manejo de amenazas. El aumento del 3.67% en extorsión impacta directamente su operación.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">Logística y Transporte</h4>
+        <p style="color:var(--acero);font-size:.9rem">Reforzar seguridad en corredores con alta incidencia de lesiones dolosas (+6.23%). Implementar rastreo GPS y protocolos de emergencia.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">Retail y Comercios</h4>
+        <p style="color:var(--acero);font-size:.9rem">Monitoreo de puntos de venta vulnerables a extorsión. Capacitación en identificación de patrones delictivos y respuesta coordinada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-container">
+    <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo</a>
+  </div>
+
+</div>
+
+<footer>
+  HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
+  <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
+  <small style="color:var(--acero);margin-top:.5rem;display:block">
+    Sin trazabilidad no hay confianza · Datos: SESNSP julio 2026 · Procesamiento: GitHub repositorios abiertos · Actualizado: 18/09/2026
+  </small>
+</footer>
+
 </body>
 </html>
