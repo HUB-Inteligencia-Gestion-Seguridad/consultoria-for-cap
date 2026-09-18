@@ -4,44 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boletín de Inteligencia | HUB IGS</title>
-<meta name="description" content="Curaduría automática de seguridad en México con fuentes verificadas. Sin trazabilidad no hay confianza.">
+<meta name="description" content="Biblioteca curada de fuentes, repositorios y análisis sobre seguridad en México. Sin trazabilidad no hay confianza.">
 <style>
 :root{--grafito:#14181d;--noche:#1e242b;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
 .wrap{max-width:900px;margin:auto;padding:0 1.2rem}
-header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2rem 1rem;text-align:center}
-header h1{color:var(--oro);font-size:1.8rem;letter-spacing:2px;text-transform:uppercase}
-header p{color:var(--acero);margin-top:.5rem;font-size:.9rem}
-nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100}
+header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2.5rem 1rem;text-align:center}
+header h1{color:var(--oro);font-size:2.1rem;letter-spacing:2px;text-transform:uppercase}
+header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic;font-size:1rem}
+nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100;border-bottom:1px solid #2a313a}
 nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--oro)}
-section{padding:2rem 0;border-bottom:1px solid #2a313a}
-h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem}
-.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
-.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.5rem}
-.card ul{list-style:none}
-.card li{padding:.4rem 0;border-bottom:1px solid #2a313a;font-size:.9rem}
+section{padding:2.5rem 0;border-bottom:1px solid #2a313a}
+h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.3rem}
+h3{color:var(--oro2);font-size:1.05rem;margin-bottom:.6rem}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem;transition:transform .2s}
+.card:hover{transform:translateX(4px)}
+.card p{color:var(--acero);font-size:.92rem;margin-bottom:.6rem}
+.card ul{list-style:none;padding-left:0}
+.card li{padding:.5rem 0;border-bottom:1px solid #2a313a;font-size:.9rem}
 .card li:last-child{border-bottom:none}
-.card a{color:var(--oro2);text-decoration:none}
-.card a:hover{text-decoration:underline}
+.card a{color:var(--oro2);text-decoration:none;font-weight:bold}
+.card a:hover{color:var(--oro);text-decoration:underline}
+.card .desc{color:var(--acero);font-size:.82rem;display:block;margin-top:.2rem;font-weight:normal}
 .nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
-.loading{color:var(--acero);font-style:italic;text-align:center;padding:2rem}
-.error{color:#ff6b6b;background:#2d1b1b;padding:.8rem;border-left:3px solid #ff6b6b;margin:.5rem 0;font-size:.9rem}
-.cta-container{text-align:center;margin:1.5rem 0}
-.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px}
+.cta-container{text-align:center;margin:2rem 0}
+.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem}
 .cta-button:hover{background:var(--oro2)}
-footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem}
-footer a{color:var(--oro2)}
-.web-link{display:inline-block;background:#2a313a;color:var(--oro2);padding:.6rem 1.2rem;text-decoration:none;border-radius:4px;margin-top:.5rem;font-size:.85rem}
-.web-link:hover{background:var(--oro);color:var(--grafito)}
+footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:1px solid #2a313a;margin-top:2rem}
+footer a{color:var(--oro2);text-decoration:none}
+footer a:hover{color:var(--oro)}
+.categoria-tag{display:inline-block;background:var(--oro);color:var(--grafito);padding:.2rem .6rem;font-size:.7rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:3px;margin-bottom:.5rem}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Boletín de Inteligencia HUB IGS</h1>
-  <p>Curaduría automática con trazabilidad · Actualizado: <span id="last-update">Cargando...</span></p>
+  <div class="slogan">Biblioteca curada · Fuentes primarias · Repositorios verificados · Sin trazabilidad no hay confianza</div>
 </header>
 
 <nav>
@@ -54,162 +55,268 @@ footer a{color:var(--oro2)}
 </nav>
 
 <div class="wrap">
+
+  <!-- SECCIÓN 1: INTRODUCCIÓN -->
   <section>
-    <h2>Fuentes Prioritarias</h2>
-    <p class="nota">Noticias de seguridad en México (Google News + SCJN)</p>
-    <div id="fuentes"></div>
+    <h2>Presentación</h2>
+    <p>Este boletín no es un agregador automático de noticias. Es una <strong>biblioteca curada</strong> de fuentes primarias, repositorios de datos abiertos y centros de análisis sobre seguridad en México. Cada enlace ha sido verificado y se actualiza en su origen, garantizando trazabilidad y permanencia.</p>
+    <p class="nota">Las fuentes se consultan directamente en su origen. No dependemos de proxies ni APIs de terceros que puedan fallar.</p>
   </section>
 
+  <!-- SECCIÓN 2: FUENTES OFICIALES PRIMARIAS -->
   <section>
-    <h2>Fuentes de Análisis Profundo</h2>
-    <p class="nota">InSightCrime, HoyoDeCrimen y México Evalúa</p>
-    <div id="analisis"></div>
+    <h2>Fuentes Oficiales Primarias</h2>
+    <p style="color:var(--acero);margin-bottom:1rem">Datos directos del Estado Mexicano. Origen primario de toda inteligencia sobre seguridad pública.</p>
+    
+    <div class="card">
+      <span class="categoria-tag">Datos Abiertos</span>
+      <h3>SESNSP · Incidencia Delictiva</h3>
+      <p>Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública. Bases de datos estatales, municipales y de víctimas desde 2015.</p>
+      <ul>
+        <li><a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener">📊 Datos Abiertos de Incidencia Delictiva →</a><span class="desc">CSV y Excel descargables · Actualización mensual</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Portal Nacional</span>
+      <h3>datos.gob.mx</h3>
+      <p>Portal oficial de datos abiertos del Gobierno de México. Incluye datasets de seguridad, justicia y procuración.</p>
+      <ul>
+        <li><a href="https://datos.gob.mx" target="_blank" rel="noopener">🌐 Portal de Datos Abiertos →</a><span class="desc">Buscador de datasets por tema y dependencia</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Marco Jurídico</span>
+      <h3>Diario Oficial de la Federación (DOF)</h3>
+      <p>Publicación oficial de leyes, normas y disposiciones. Fuente primaria del marco jurídico de seguridad.</p>
+      <ul>
+        <li><a href="https://dof.gob.mx" target="_blank" rel="noopener">📜 DOF · Diario Oficial →</a><span class="desc">Búsqueda por palabra clave "seguridad"</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Judicial</span>
+      <h3>SCJN · Suprema Corte de Justicia</h3>
+      <p>Comunicados, tesis y jurisprudencia en materia de seguridad y derechos fundamentales.</p>
+      <ul>
+        <li><a href="https://www.scjn.gob.mx" target="_blank" rel="noopener">⚖️ SCJN · Comunicados →</a><span class="desc">Resoluciones y criterios jurisprudenciales</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Estadística</span>
+      <h3>INEGI · Encuestas de Seguridad</h3>
+      <p>Encuesta Nacional de Seguridad Pública Urbana (ENSU) y estadísticas de victimización.</p>
+      <ul>
+        <li><a href="https://www.inegi.org.mx/temas/seguridad/" target="_blank" rel="noopener"> INEGI · Seguridad →</a><span class="desc">ENSU, ENVIPE y datos por entidad</span></li>
+      </ul>
+    </div>
   </section>
 
+  <!-- SECCIÓN 3: REPOSITORIOS GITHUB - SEGURIDAD PÚBLICA -->
+  <section>
+    <h2>Repositorios GitHub · Seguridad Pública</h2>
+    <p style="color:var(--acero);margin-bottom:1rem">Proyectos de código abierto que procesan, limpian y analizan datos oficiales del SESNSP con trazabilidad.</p>
+
+    <div class="card">
+      <span class="categoria-tag">Python · SESNSP</span>
+      <h3>Incidencia Delictiva en México</h3>
+      <p>Scripts Python y datasets para analizar cifras y tendencias de incidencia delictiva a partir de datos abiertos del SESNSP. Incluye series de tiempo y mapas coropléticos.</p>
+      <ul>
+        <li><a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener"> lapanquecita/incidencia-delictiva →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Datasets · CSV</span>
+      <h3>Criminalidad México (Beelzabi)</h3>
+      <p>Archivos CSV de incidencia delictiva descargados directamente del SESNSP, con scripts para unión y transformación de datos.</p>
+      <ul>
+        <li><a href="https://github.com/Beelzabi/crimen_mex" target="_blank" rel="noopener">️ Beelzabi/crimen_mex →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">BI Geoespacial · H3</span>
+      <h3>SafeHex MX (crosasr)</h3>
+      <p>Herramienta de Business Intelligence geoespacial con hexágonos H3 (Uber) y datos oficiales del SESNSP desde 2015 hasta 2025. Ideal para PyMEs y consultoría.</p>
+      <ul>
+        <li><a href="https://github.com/crosasr/hexseg-mx" target="_blank" rel="noopener">️ crosasr/hexseg-mx →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">CDMX · C5</span>
+      <h3>Delincuencia Cuauhtémoc 2019-2024</h3>
+      <p>Análisis de delitos captados por la red de cámaras del C5 en la alcaldía Cuauhtémoc, CDMX. Incluye bases limpias y análisis.</p>
+      <ul>
+        <li><a href="https://github.com/Yfabiolaa/Delincuencia-Cuauht-moc-CDMX-2019-2024" target="_blank" rel="noopener"> Yfabiolaa/Delincuencia-Cuauhtémoc →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Archival · Trazabilidad</span>
+      <h3>Observatorio Delictivo MX</h3>
+      <p>Monitoreo y archivo de datos del SESNSP. Preserva el historial ante la sobrescritura de archivos oficiales.</p>
+      <ul>
+        <li><a href="https://github.com/jballesterosc/observatorio-delictivo-mx" target="_blank" rel="noopener"> jballesterosc/observatorio-delictivo-mx →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Modelado Predictivo</span>
+      <h3>Análisis de Delitos en México (sarablanz)</h3>
+      <p>Análisis exploratorio y modelado predictivo con dataset de Kaggle. Limpieza, visualizaciones y modelo de clasificación con 96.7% de precisión.</p>
+      <ul>
+        <li><a href="https://github.com/sarablanz/delitos_kaggle" target="_blank" rel="noopener">🤖 sarablanz/delitos_kaggle →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Personas Desaparecidas</span>
+      <h3>Desapariciones en México</h3>
+      <p>Datos de homicidios y desapariciones del SESNSP con comparativos estatales y detección de divergencias en registros.</p>
+      <ul>
+        <li><a href="https://github.com/lapanquecita/personas-desaparecidas" target="_blank" rel="noopener">🔍 lapanquecita/personas-desaparecidas →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: REPOSITORIOS GITHUB - SEGURIDAD INDUSTRIAL Y LABORAL -->
+  <section>
+    <h2>Repositorios GitHub · Seguridad Industrial y Laboral (HSE)</h2>
+    
+    <div class="card">
+      <span class="categoria-tag">NOM · STPS</span>
+      <h3>NOM-037-STPS-2023 (Teletrabajo)</h3>
+      <p>Implementación y documentación de la Norma Oficial Mexicana sobre requisitos de seguridad y salud para el teletrabajo.</p>
+      <ul>
+        <li><a href="https://github.com/RafaelG96/NOM-037-STPS" target="_blank" rel="noopener">📋 RafaelG96/NOM-037-STPS →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">IA · SST</span>
+      <h3>AI-SST Vision</h3>
+      <p>Aplicación de inteligencia artificial multimodal para identificar, analizar y documentar situaciones de riesgo en entornos laborales.</p>
+      <ul>
+        <li><a href="https://github.com/Alex29Script/VisionIASST" target="_blank" rel="noopener">🤖 Alex29Script/VisionIASST →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: REPOSITORIOS GITHUB - CIBERSEGURIDAD -->
+  <section>
+    <h2>Repositorios GitHub · Ciberseguridad</h2>
+
+    <div class="card">
+      <span class="categoria-tag">Mapeo Institucional</span>
+      <h3>Mapa de Autoridades de Ciberseguridad MX</h3>
+      <p>Proyecto colaborativo que mapea autoridades federales, estatales y sectoriales con competencias en ciberseguridad en México.</p>
+      <ul>
+        <li><a href="https://github.com/jersain-llamas/mapa-autoridades-ciber-mx" target="_blank" rel="noopener">🛡️ jersain-llamas/mapa-autoridades-ciber-mx →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Blue Team · MITRE</span>
+      <h3>CyberRisk-Lab</h3>
+      <p>Simulación práctica de ciberseguridad defensiva para empresas mexicanas. Aplica marcos MITRE ATT&CK e ISO/IEC 27005.</p>
+      <ul>
+        <li><a href="https://github.com/GuagnelliData/CyberRisk-Lab" target="_blank" rel="noopener">🔐 GuagnelliData/CyberRisk-Lab →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Suite OSINT</span>
+      <h3>MFH TOOLS PRO</h3>
+      <p>Suite de ciberseguridad con más de 20 herramientas: OSINT, escáner de puertos, cifrado. Hecho en México.</p>
+      <ul>
+        <li><a href="https://github.com/Falconmx1/mx_falconmx_security" target="_blank" rel="noopener">🔧 Falconmx1/mx_falconmx_security →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: SEGURIDAD NACIONAL -->
+  <section>
+    <h2>Repositorios GitHub · Seguridad Nacional</h2>
+
+    <div class="card">
+      <span class="categoria-tag">Flujos de Armas</span>
+      <h3>US-MX Gun Flows</h3>
+      <p>Archivos STATA para investigación sobre flujos de armas entre Estados Unidos y México. Referencias al dataset CENAPI/Guacamaya.</p>
+      <ul>
+        <li><a href="https://github.com/tophermcd/US-MX-flows_The-Conversation" target="_blank" rel="noopener">🔫 tophermcd/US-MX-flows →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: CENTROS DE ANÁLISIS Y MEDIOS -->
+  <section>
+    <h2>Centros de Análisis y Medios Especializados</h2>
+    <p style="color:var(--acero);margin-bottom:1rem">Think tanks y medios con análisis profundo sobre seguridad, crimen organizado y justicia en México.</p>
+
+    <div class="card">
+      <span class="categoria-tag">Crimen Organizado</span>
+      <h3>InSightCrime · México</h3>
+      <p>Medio especializado en crimen organizado, narcotráfico y seguridad en las Américas. Análisis en español.</p>
+      <ul>
+        <li><a href="https://insightcrime.org/es/mexico/" target="_blank" rel="noopener"> InSightCrime · México →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Datos Delictivos</span>
+      <h3>HoyoDeCrimen</h3>
+      <p>Visualización de incidencia delictiva en México. Mapas interactivos y análisis de tendencias por entidad y delito.</p>
+      <ul>
+        <li><a href="https://hoyodecrimen.com" target="_blank" rel="noopener">🟢 HoyoDeCrimen →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Think Tank</span>
+      <h3>México Evalúa</h3>
+      <p>Centro de análisis y evaluación de políticas públicas. Data Justicia, seguridad, procuración y sistema penal.</p>
+      <ul>
+        <li><a href="https://mexicoevalua.org" target="_blank" rel="noopener"> México Evalúa →</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="categoria-tag">Plataforma Preventiva</span>
+      <h3>INFORM México</h3>
+      <p>Índice de riesgo multidimensional. Datos de México Evalúa y plataformas preventivas para cálculo de amenazas y exposición.</p>
+      <ul>
+        <li><a href="https://github.com/plataformapreventiva/inform-mexico" target="_blank" rel="noopener">📈 plataformapreventiva/inform-mexico →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: ANÁLISIS FOR&CAP -->
   <section>
     <h2>Análisis FOR&CAP</h2>
     <div class="card">
       <h3>Nota editorial de la semana</h3>
-      <p>Edita este bloque en boletin.html para publicar tu análisis semanal del entorno de seguridad.</p>
+      <p>Edita este bloque en <code>boletin.html</code> para publicar tu análisis semanal del entorno de seguridad (reformas, criterios, tendencias delictivas).</p>
+      <small style="color:var(--oro)">Hub FOR&CAP · Metodología de inteligencia aplicada</small>
     </div>
   </section>
 
+  <!-- CTA -->
   <div class="cta-container">
-    <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Suscribirme al boletín</a>
+    <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo</a>
   </div>
+
 </div>
 
 <footer>
   HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
   <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
-  <small>Las fuentes se actualizan automáticamente · Sin trazabilidad no hay confianza</small>
+  Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.<br>
+  <small style="color:var(--acero);margin-top:.5rem;display:block">Sin trazabilidad no hay confianza · Biblioteca curada · Enlaces verificados al 18/09/2026</small>
 </footer>
-
-<script>
-// ===== FUENTES RSS =====
-const FUENTES = [
-  {
-    nombre: 'Google News · Seguridad Privada MX',
-    rssUrl: 'https://news.google.com/rss/search?q=seguridad+privada+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'
-  },
-  {
-    nombre: 'Google News · Seguridad Pública MX',
-    rssUrl: 'https://news.google.com/rss/search?q=seguridad+p%C3%BAblica+M%C3%A9xico&hl=es-MX&gl=MX&ceid=MX:es-419'
-  },
-  {
-    nombre: 'SCJN · Comunicados',
-    rssUrl: 'https://www.scjn.gob.mx/rss/comunicados'
-  }
-];
-
-// ===== FUENTES WEB (sin RSS) =====
-const ANALISIS = [
-  {
-    nombre: 'InSightCrime · México',
-    url: 'https://insightcrime.org/es/mexico/',
-    descripcion: 'Crimen organizado y seguridad en México'
-  },
-  {
-    nombre: 'HoyoDeCrimen',
-    url: 'https://hoyodecrimen.com',
-    descripcion: 'Visualización de incidencia delictiva'
-  },
-  {
-    nombre: 'México Evalúa',
-    url: 'https://mexicoevalua.org',
-    descripcion: 'Análisis del sistema de justicia penal'
-  }
-];
-
-// ===== CARGA CON RSS2JSON (ya verificado que funciona) =====
-async function cargarFeed(rssUrl) {
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=5`;
-  
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    
-    const data = await response.json();
-    
-    if (data.status === 'ok' && data.items && data.items.length > 0) {
-      return data.items;
-    }
-    
-    return [];
-  } catch (error) {
-    console.error('Error cargando feed:', error);
-    return [];
-  }
-}
-
-// ===== RENDERIZADO =====
-function crearTarjeta(fuente, items) {
-  if (!items || items.length === 0) {
-    return `
-      <div class="card">
-        <h3>${fuente.nombre}</h3>
-        <p class="error">No se pudieron cargar los datos. Intenta recargar la página.</p>
-      </div>
-    `;
-  }
-
-  let html = `<div class="card"><h3>${fuente.nombre}</h3><ul>`;
-  
-  items.forEach(item => {
-    const fecha = item.pubDate ? new Date(item.pubDate).toLocaleDateString('es-MX', {day: 'numeric', month: 'short'}) : '';
-    html += `
-      <li>
-        <a href="${item.link}" target="_blank" rel="noopener">
-          <strong>${item.title}</strong><br>
-          <small style="color:var(--acero)">${fecha}</small>
-        </a>
-      </li>
-    `;
-  });
-  
-  html += '</ul></div>';
-  return html;
-}
-
-function crearWebCard(fuente) {
-  return `
-    <div class="card">
-      <h3>${fuente.nombre}</h3>
-      <p style="color:var(--acero);margin-bottom:.5rem">${fuente.descripcion}</p>
-      <a href="${fuente.url}" target="_blank" rel="noopener" class="web-link">Acceder al sitio →</a>
-    </div>
-  `;
-}
-
-// ===== CARGA INICIAL =====
-async function cargarBoletin() {
-  const contenedor = document.getElementById('fuentes');
-  contenedor.innerHTML = '<div class="loading">Cargando fuentes de inteligencia...</div>';
-  
-  let html = '';
-  
-  for (const fuente of FUENTES) {
-    const items = await cargarFeed(fuente.rssUrl);
-    html += crearTarjeta(fuente, items);
-  }
-  
-  contenedor.innerHTML = html || '<p class="error">No se pudieron cargar las fuentes.</p>';
-  
-  // Cargar fuentes de análisis
-  const analisisContainer = document.getElementById('analisis');
-  let analisisHtml = '';
-  ANALISIS.forEach(fuente => {
-    analisisHtml += crearWebCard(fuente);
-  });
-  analisisContainer.innerHTML = analisisHtml;
-  
-  // Actualizar timestamp
-  document.getElementById('last-update').textContent = new Date().toLocaleString('es-MX');
-}
-
-// Iniciar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', cargarBoletin);
-</script>
 
 </body>
 </html>
