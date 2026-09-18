@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121212">
+<title>HUB IGS · Tarjeta digital</title>
+<meta name="description" content="Hub de Inteligencia y Gestión en Seguridad. Contraloría de pérdida interna y auditoría forense de proveedores. Sin trazabilidad no hay confianza.">
+<style>
+  :root{--grafito:#121212;--oro:#C9A227;--plata1:#E6E6E6;--plata2:#C0C0C0;--plata3:#808080}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--grafito);color:var(--plata1);font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center}
+  main{width:100%;max-width:480px;padding:32px 20px 48px}
+  section{text-align:center;margin-bottom:40px}
+  img.escudo{width:150px;height:auto;margin-bottom:16px}
+  h1{color:var(--oro);font-size:26px;letter-spacing:1px;line-height:1.25}
+  .sub{color:var(--plata2);font-size:15px;margin-top:6px}
+  .valor{color:var(--oro);font-size:14px;font-style:italic;margin-top:14px;line-height:1.5}
+  h2{color:var(--oro);font-size:18px;letter-spacing:2px;margin-bottom:16px}
+  a.btn{display:block;background:#1A1A1A;border:1px solid var(--plata3);border-radius:12px;color:var(--plata1);text-decoration:none;padding:16px;margin-bottom:12px;font-size:16px}
+  a.btn:active{border-color:var(--oro);color:var(--oro)}
+  ul{list-style:none;text-align:left}
+  li{margin-bottom:14px;font-size:15px;line-height:1.45}
+  li b{display:block;color:var(--plata1)}
+  li span{color:var(--plata2)}
+  .lema{color:var(--oro);font-size:20px;font-weight:bold;letter-spacing:1px;line-height:1.4}
+  .url{color:var(--plata3);font-size:12px;margin-top:10px;word-break:break-all}
+  footer{color:var(--plata3);font-size:11px;text-align:center;line-height:1.6}
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <img class="escudo" src="escudo.png" alt="Escudo HUB IGS" onerror="this.style.display='none'">
+    <h1>HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD</h1>
+    <p class="sub">Consultoría</p>
+    <p class="valor">Contraloría de pérdida interna y auditoría forense de proveedores: seguridad con trazabilidad auditable.</p>
+  </section>
+  <section>
+    <h2>CONTACTO DIRECTO</h2>
+    <a class="btn" href="https://wa.me/525658346378?text=Hola%20HUB%20IGS%2C%20escane%C3%A9%20su%20tarjeta%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n">💬 WhatsApp directo</a>
+    <a class="btn" href="mailto:hub-forcap@proton.me?subject=Contacto%20desde%20tarjeta%20digital">✉️ Escribir por correo</a>
+    <a class="btn" href="https://youtube.com/@HUB-forcap">▶️ Ver canal de YouTube</a>
+    <a class="btn" href="HUB_IGS.vcf" download>📇 Guardar en contactos</a>
+  </section>
+  <section>
+    <h2>QUÉ HACEMOS</h2>
+    <ul>
+      <li><b>Dirección Estratégica y Jurídica</b><span>Blindaje normativo y gestión de crisis.</span></li>
+      <li><b>Dirección de Inteligencia Criminológica</b><span>Investigación forense y KPIs con folio.</span></li>
+      <li><b>Dirección de Operaciones Tácticas</b><span>Contraloría de campo y de proveedores.</span></li>
+      <li><b>Dirección de Formación y Cultura</b><span>Capacitación DC-3 y prevención de violencia.</span></li>
+    </ul>
+  </section>
+  <section>
+    <p class="lema">"SIN TRAZABILIDAD<br>NO HAY CONFIANZA"</p>
+    <a class="btn" id="compartir" href="#">🔗 Compartir esta tarjeta</a>
+    <p class="url" id="miurl"></p>
+  </section>
+  <footer>HUB IGS · Corredor Toluca–Lerma, México<br>TARJETA-2026-001-D · Paleta PAL-2026-001 v3</footer>
+</main>
+<script>
+  document.getElementById('miurl').textContent = location.href;
+  document.getElementById('compartir').addEventListener('click', function(e){
+    e.preventDefault();
+    var url = location.href;
+    if (navigator.share) { navigator.share({title:'HUB IGS · Tarjeta digital', url:url}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function(){ alert('Dirección copiada: ' + url); }); }
+    else { prompt('Copia la dirección:', url); }
+  });
+</script>
+</body>
+</html>
