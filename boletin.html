@@ -86,7 +86,7 @@ footer a{color:var(--oro2)}
 </footer>
 
 <script>
-// ===== FUENTES RSS (usando rss2json.com) =====
+// ===== FUENTES RSS =====
 const FUENTES = [
   {
     nombre: 'Google News · Seguridad Privada MX',
@@ -121,7 +121,7 @@ const ANALISIS = [
   }
 ];
 
-// ===== CARGA CON RSS2JSON =====
+// ===== CARGA CON RSS2JSON (ya verificado que funciona) =====
 async function cargarFeed(rssUrl) {
   const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=5`;
   
