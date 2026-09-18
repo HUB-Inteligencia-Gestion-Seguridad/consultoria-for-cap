@@ -6,32 +6,51 @@
 <title>HUB IGS · Hub de Inteligencia y Gestión en Seguridad</title>
 <meta name="description" content="Hub de Inteligencia y Gestión en Seguridad. Prevención estratégica, protección jurídica y profesionalismo corporativo. Metodología FOR&CAP.">
 <style>
-:root{--grafito:#0A0A0A;--noche:#0A0A0A;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
+:root{
+  --negro:#0A0A0A;
+  --grafito:#14181d;
+  --noche:#1e242b;
+  --oro:#c9a227;
+  --oro2:#f0d48a;
+  --acero:#a9afb6;
+  --texto:#f2f4f6
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
+body{font-family:Segoe UI,Arial,sans-serif;background:var(--negro);color:var(--texto);line-height:1.7}
 .wrap{max-width:900px;margin:auto;padding:0 1.2rem}
 
 /* HEADER CON LOGO */
-header{background:var(--noche);border-bottom:3px solid var(--oro);padding:3rem 1rem 2rem;text-align:center}
+header{background:var(--negro);border-bottom:3px solid var(--oro);padding:3rem 1rem 2rem;text-align:center}
 header img.logo{width:100%;max-width:480px;height:auto;display:block;margin:0 auto 1.5rem}
 header .slogan{color:var(--oro2);font-size:1.1rem;font-style:italic;letter-spacing:.5px}
 
 /* NAVEGACIÓN */
-nav{background:var(--noche);padding:.7rem;text-align:center;border-bottom:1px solid #1a1a1a}
-nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+nav{background:var(--grafito);padding:.9rem;text-align:center;border-bottom:2px solid var(--oro)}
+nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
 nav a:hover{color:var(--oro)}
 
 /* SECCIONES */
-section{padding:2.5rem 0;border-bottom:1px solid #1a1a1a}
-h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem}
-.card{background:#0f0f0f;border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
-.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.3rem}
+section{padding:2.5rem 0;border-bottom:1px solid var(--oro)}
+h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--acero)}
+h2::after{content:"";display:block;width:60px;height:2px;background:var(--oro);margin-top:.5rem}
+
+/* TARJETAS CON CONTRASTE */
+.card{background:var(--noche);border:1px solid var(--oro);border-left:4px solid var(--oro);padding:1.2rem 1.4rem;margin-bottom:1.2rem;border-radius:4px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(201,162,39,.15)}
+.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.4rem;letter-spacing:.5px}
+.card h3::before{content:"◆ ";color:var(--oro);font-size:.7rem}
 .card p{color:var(--acero);font-size:.92rem}
-.nota{border:1px solid var(--oro);background:#0f0f0f;color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
-.cta-container{text-align:center;margin:1.5rem 0 .5rem}
-.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem}
-.cta-button:hover{background:var(--oro2)}
-footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:1px solid #1a1a1a;margin-top:2rem}
+
+/* NOTA DESTACADA */
+.nota{border:2px solid var(--oro);background:var(--grafito);color:var(--oro2);padding:1.2rem;margin:1.5rem 0;font-size:.95rem;text-align:center;border-radius:4px;letter-spacing:.5px}
+
+/* BOTÓN CTA */
+.cta-container{text-align:center;margin:2rem 0}
+.cta-button{display:inline-block;background:var(--oro);color:var(--negro);padding:1rem 2rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem;border:2px solid var(--oro);transition:all .3s}
+.cta-button:hover{background:transparent;color:var(--oro);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:3px solid var(--oro);margin-top:2rem;background:var(--grafito)}
 footer a{color:var(--oro2);text-decoration:none}
 footer a:hover{color:var(--oro)}
 
@@ -40,6 +59,7 @@ footer a:hover{color:var(--oro)}
   header img.logo{max-width:320px}
   header .slogan{font-size:.95rem}
   nav a{margin:0 .4rem;font-size:.75rem}
+  .card{padding:1rem}
 }
 </style>
 </head>
@@ -87,7 +107,7 @@ footer a:hover{color:var(--oro)}
     <p>No vendemos horas-hombre de guardias, no vendemos equipos y no operamos servicios regulados. Vendemos <strong style="color:var(--oro)">inteligencia y procesos</strong> con trazabilidad auditable. Nuestro valor se instala en tu organización como un sistema completo: personas con criterio, procesos verificados y tecnología alineada a tu riesgo real.</p>
   </section>
 
-  <div class="nota">Sin trazabilidad no hay confianza.</div>
+  <div class="nota">◆ SIN TRAZABILIDAD NO HAY CONFIANZA ◆</div>
 
   <div class="cta-container">
     <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo</a>
