@@ -4,45 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boletín de Inteligencia | HUB IGS</title>
-<meta name="description" content="Biblioteca curada de fuentes, repositorios y análisis sobre seguridad en México. Sin trazabilidad no hay confianza.">
+<meta name="description" content="Dashboard de inteligencia con datos, cifras y estadísticas de seguridad en México. Análisis trazable del SESNSP.">
 <style>
 :root{--grafito:#14181d;--noche:#1e242b;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
-.wrap{max-width:900px;margin:auto;padding:0 1.2rem}
+.wrap{max-width:1200px;margin:auto;padding:0 1.2rem}
 header{background:var(--noche);border-bottom:3px solid var(--oro);padding:2.5rem 1rem;text-align:center}
 header h1{color:var(--oro);font-size:2.1rem;letter-spacing:2px;text-transform:uppercase}
-header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic;font-size:1rem}
+header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic}
 nav{background:var(--noche);padding:.7rem;text-align:center;position:sticky;top:0;z-index:100;border-bottom:1px solid #2a313a}
 nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--oro)}
 section{padding:2.5rem 0;border-bottom:1px solid #2a313a}
 h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.3rem}
 h3{color:var(--oro2);font-size:1.05rem;margin-bottom:.6rem}
-.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem;transition:transform .2s}
-.card:hover{transform:translateX(4px)}
-.card p{color:var(--acero);font-size:.92rem;margin-bottom:.6rem}
-.card ul{list-style:none;padding-left:0}
-.card li{padding:.5rem 0;border-bottom:1px solid #2a313a;font-size:.9rem}
-.card li:last-child{border-bottom:none}
-.card a{color:var(--oro2);text-decoration:none;font-weight:bold}
-.card a:hover{color:var(--oro);text-decoration:underline}
-.card .desc{color:var(--acero);font-size:.82rem;display:block;margin-top:.2rem;font-weight:normal}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
+.card:hover{transform:translateX(4px);transition:transform .2s}
 .nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
 .cta-container{text-align:center;margin:2rem 0}
-.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px;margin:.3rem}
+.cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px}
 .cta-button:hover{background:var(--oro2)}
 footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:1px solid #2a313a;margin-top:2rem}
-footer a{color:var(--oro2);text-decoration:none}
-footer a:hover{color:var(--oro)}
-.categoria-tag{display:inline-block;background:var(--oro);color:var(--grafito);padding:.2rem .6rem;font-size:.7rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:3px;margin-bottom:.5rem}
+footer a{color:var(--oro2)}
+
+/* DASHBOARD DE DATOS */
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.stat-card{background:var(--noche);border:1px solid var(--oro);border-radius:6px;padding:1rem;text-align:center}
+.stat-card h4{color:var(--oro2);font-size:.9rem;margin-bottom:.5rem;text-transform:uppercase}
+.stat-number{font-size:2.5rem;font-weight:bold;color:var(--oro);margin:.5rem 0}
+.stat-trend{font-size:.85rem;padding:.3rem .6rem;border-radius:3px;display:inline-block;margin-top:.5rem}
+.trend-down{background:#1b4332;color:#4cc9a0}
+.trend-up{background:#4a1c1c;color:#ff6b6b}
+.chart-container{background:var(--noche);border:1px solid var(--oro);border-radius:6px;padding:1rem;margin:1rem 0}
+.chart-container img{width:100%;border-radius:4px}
+.data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+.data-table th{background:var(--oro);color:var(--grafito);padding:.8rem;text-align:left;font-weight:bold}
+.data-table td{padding:.6rem;border-bottom:1px solid #2a313a}
+.data-table tr:hover{background:#2a313a}
+.badge{display:inline-block;background:var(--oro);color:var(--grafito);padding:.2rem .6rem;font-size:.7rem;font-weight:bold;border-radius:3px;margin-right:.5rem}
+.source-link{color:var(--oro2);text-decoration:none;font-size:.85rem}
+.source-link:hover{color:var(--oro);text-decoration:underline}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Boletín de Inteligencia HUB IGS</h1>
-  <div class="slogan">Biblioteca curada · Fuentes primarias · Repositorios verificados · Sin trazabilidad no hay confianza</div>
+  <div class="slogan">Dashboard de datos · Estadísticas trazables · Análisis delictivo · Sin trazabilidad no hay confianza</div>
 </header>
 
 <nav>
@@ -56,251 +65,234 @@ footer a:hover{color:var(--oro)}
 
 <div class="wrap">
 
-  <!-- SECCIÓN 1: INTRODUCCIÓN -->
+  <!-- SECCIÓN 1: DASHBOARD PRINCIPAL -->
   <section>
-    <h2>Presentación</h2>
-    <p>Este boletín no es un agregador automático de noticias. Es una <strong>biblioteca curada</strong> de fuentes primarias, repositorios de datos abiertos y centros de análisis sobre seguridad en México. Cada enlace ha sido verificado y se actualiza en su origen, garantizando trazabilidad y permanencia.</p>
-    <p class="nota">Las fuentes se consultan directamente en su origen. No dependemos de proxies ni APIs de terceros que puedan fallar.</p>
-  </section>
-
-  <!-- SECCIÓN 2: FUENTES OFICIALES PRIMARIAS -->
-  <section>
-    <h2>Fuentes Oficiales Primarias</h2>
-    <p style="color:var(--acero);margin-bottom:1rem">Datos directos del Estado Mexicano. Origen primario de toda inteligencia sobre seguridad pública.</p>
+    <h2>📊 Dashboard de Incidencia Delictiva · México</h2>
+    <p class="nota">Datos procesados del SESNSP · Reporte julio 2026 · Fuente: <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" class="source-link">lapanquecita/incidencia-delictiva</a></p>
+    
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <h4>Homicidio Doloso</h4>
+        <div class="stat-number">1,149</div>
+        <div class="stat-trend trend-down">🔽 -33.78%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Feminicidio</h4>
+        <div class="stat-number">60</div>
+        <div class="stat-trend trend-up">🔼 +3.45%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Secuestro</h4>
+        <div class="stat-number">24</div>
+        <div class="stat-trend trend-down">🔽 -36.84%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Extorsión</h4>
+        <div class="stat-number">961</div>
+        <div class="stat-trend trend-up">🔼 +3.67%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Lesiones Dolosas</h4>
+        <div class="stat-number">13,800</div>
+        <div class="stat-trend trend-up">🔼 +6.23%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+      
+      <div class="stat-card">
+        <h4>Abuso Sexual</h4>
+        <div class="stat-number">2,790</div>
+        <div class="stat-trend trend-down">🔽 -1.12%</div>
+        <p style="color:var(--acero);font-size:.8rem;margin-top:.5rem">Casos julio 2026</p>
+      </div>
+    </div>
     
     <div class="card">
-      <span class="categoria-tag">Datos Abiertos</span>
-      <h3>SESNSP · Incidencia Delictiva</h3>
-      <p>Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública. Bases de datos estatales, municipales y de víctimas desde 2015.</p>
-      <ul>
-        <li><a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener">📊 Datos Abiertos de Incidencia Delictiva →</a><span class="desc">CSV y Excel descargables · Actualización mensual</span></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Portal Nacional</span>
-      <h3>datos.gob.mx</h3>
-      <p>Portal oficial de datos abiertos del Gobierno de México. Incluye datasets de seguridad, justicia y procuración.</p>
-      <ul>
-        <li><a href="https://datos.gob.mx" target="_blank" rel="noopener">🌐 Portal de Datos Abiertos →</a><span class="desc">Buscador de datasets por tema y dependencia</span></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Marco Jurídico</span>
-      <h3>Diario Oficial de la Federación (DOF)</h3>
-      <p>Publicación oficial de leyes, normas y disposiciones. Fuente primaria del marco jurídico de seguridad.</p>
-      <ul>
-        <li><a href="https://dof.gob.mx" target="_blank" rel="noopener">📜 DOF · Diario Oficial →</a><span class="desc">Búsqueda por palabra clave "seguridad"</span></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Judicial</span>
-      <h3>SCJN · Suprema Corte de Justicia</h3>
-      <p>Comunicados, tesis y jurisprudencia en materia de seguridad y derechos fundamentales.</p>
-      <ul>
-        <li><a href="https://www.scjn.gob.mx" target="_blank" rel="noopener">⚖️ SCJN · Comunicados →</a><span class="desc">Resoluciones y criterios jurisprudenciales</span></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Estadística</span>
-      <h3>INEGI · Encuestas de Seguridad</h3>
-      <p>Encuesta Nacional de Seguridad Pública Urbana (ENSU) y estadísticas de victimización.</p>
-      <ul>
-        <li><a href="https://www.inegi.org.mx/temas/seguridad/" target="_blank" rel="noopener"> INEGI · Seguridad →</a><span class="desc">ENSU, ENVIPE y datos por entidad</span></li>
-      </ul>
+      <h3>📈 Análisis de Tendencias (12 meses)</h3>
+      <p style="color:var(--acero);margin-bottom:1rem">Las gráficas muestran la evolución mensual de cada delito. Un registro puede tener más de una víctima.</p>
+      
+      <div class="chart-container">
+        <p style="text-align:center;color:var(--oro2);margin-bottom:1rem"><strong>Gráficas disponibles en el repositorio:</strong></p>
+        <ul style="list-style:none;padding:0">
+          <li style="padding:.5rem 0;border-bottom:1px solid #2a313a">
+            <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" class="source-link">
+              📊 Ver gráficas completas de homicidio, feminicidio, secuestro, extorsión →
+            </a>
+          </li>
+          <li style="padding:.5rem 0;border-bottom:1px solid #2a313a">
+            <a href="https://hoyodecrimen.com" target="_blank" rel="noopener" class="source-link">
+              🗺️ Mapas interactivos por entidad y municipio →
+            </a>
+          </li>
+          <li style="padding:.5rem 0">
+            <a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener" class="source-link">
+               Descargar bases de datos oficiales del SESNSP →
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 3: REPOSITORIOS GITHUB - SEGURIDAD PÚBLICA -->
+  <!-- SECCIÓN 2: TABLA COMPARATIVA -->
   <section>
-    <h2>Repositorios GitHub · Seguridad Pública</h2>
-    <p style="color:var(--acero);margin-bottom:1rem">Proyectos de código abierto que procesan, limpian y analizan datos oficiales del SESNSP con trazabilidad.</p>
+    <h2>📋 Tabla Comparativa · Delitos de Alto Impacto</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Delito</th>
+          <th>Julio 2026</th>
+          <th>Tendencia</th>
+          <th>Variación 12 meses</th>
+          <th>Lectura HUB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge">ALTO</span>Homicidio doloso</td>
+          <td><strong>1,149</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-33.78%</td>
+          <td style="color:var(--acero)">Reducción significativa</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#ff6b6b;color:#fff">CRÍTICO</span>Feminicidio</td>
+          <td><strong>60</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+3.45%</td>
+          <td style="color:var(--acero)">Alerta: tendencia al alza</td>
+        </tr>
+        <tr>
+          <td><span class="badge">ALTO</span>Secuestro</td>
+          <td><strong>24</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-36.84%</td>
+          <td style="color:var(--acero)">Caída importante</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#f0d48a;color:#14181d">MEDIO</span>Extorsión</td>
+          <td><strong>961</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+3.67%</td>
+          <td style="color:var(--acero)">Presión a comercios</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#f0d48a;color:#14181d">MEDIO</span>Lesiones dolosas</td>
+          <td><strong>13,800</strong></td>
+          <td style="color:#ff6b6b">Aumento</td>
+          <td>+6.23%</td>
+          <td style="color:var(--acero)">Violencia no letal ↑</td>
+        </tr>
+        <tr>
+          <td><span class="badge">ALTO</span>Abuso sexual</td>
+          <td><strong>2,790</strong></td>
+          <td style="color:#4cc9a0">Descenso</td>
+          <td>-1.12%</td>
+          <td style="color:var(--acero)">Ligera reducción</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
+  <!-- SECCIÓN 3: ANÁLISIS FOR&CAP -->
+  <section>
+    <h2>🔍 Análisis FOR&CAP · Lectura Ejecutiva</h2>
     <div class="card">
-      <span class="categoria-tag">Python · SESNSP</span>
-      <h3>Incidencia Delictiva en México</h3>
-      <p>Scripts Python y datasets para analizar cifras y tendencias de incidencia delictiva a partir de datos abiertos del SESNSP. Incluye series de tiempo y mapas coropléticos.</p>
-      <ul>
-        <li><a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener"> lapanquecita/incidencia-delictiva →</a></li>
+      <h3>Hallazgo Crítico · Julio 2026</h3>
+      <p style="color:var(--texto);line-height:1.8;margin-bottom:1rem">
+        <strong style="color:var(--oro)">Cambio de modalidad delictiva:</strong> Mientras homicidio doloso (-33.78%) y secuestro (-36.84%) 
+        muestran descensos significativos, <strong style="color:var(--oro2)">lesiones dolosas (+6.23%) y extorsión (+3.67%) van en aumento</strong>. 
+        Esto sugiere una transformación en la operación delictiva: menor letalidad pero mayor violencia instrumental y presión económica sobre el sector empresarial.
+      </p>
+      <p style="color:var(--acero);font-size:.9rem;line-height:1.6;margin-bottom:1rem">
+        <strong>Implicación para empresas:</strong> Los protocolos de seguridad deben reforzar:
+      </p>
+      <ul style="color:var(--acero);padding-left:1.5rem;line-height:1.8">
+        <li>Protección de puntos de venta contra extorsión</li>
+        <li>Capacitación en manejo de amenazas no letales</li>
+        <li>Protocolos de respuesta a lesiones en instalaciones</li>
+        <li>Monitoreo de corredores logísticos con alta incidencia de lesiones</li>
       </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Datasets · CSV</span>
-      <h3>Criminalidad México (Beelzabi)</h3>
-      <p>Archivos CSV de incidencia delictiva descargados directamente del SESNSP, con scripts para unión y transformación de datos.</p>
-      <ul>
-        <li><a href="https://github.com/Beelzabi/crimen_mex" target="_blank" rel="noopener">️ Beelzabi/crimen_mex →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">BI Geoespacial · H3</span>
-      <h3>SafeHex MX (crosasr)</h3>
-      <p>Herramienta de Business Intelligence geoespacial con hexágonos H3 (Uber) y datos oficiales del SESNSP desde 2015 hasta 2025. Ideal para PyMEs y consultoría.</p>
-      <ul>
-        <li><a href="https://github.com/crosasr/hexseg-mx" target="_blank" rel="noopener">️ crosasr/hexseg-mx →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">CDMX · C5</span>
-      <h3>Delincuencia Cuauhtémoc 2019-2024</h3>
-      <p>Análisis de delitos captados por la red de cámaras del C5 en la alcaldía Cuauhtémoc, CDMX. Incluye bases limpias y análisis.</p>
-      <ul>
-        <li><a href="https://github.com/Yfabiolaa/Delincuencia-Cuauht-moc-CDMX-2019-2024" target="_blank" rel="noopener"> Yfabiolaa/Delincuencia-Cuauhtémoc →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Archival · Trazabilidad</span>
-      <h3>Observatorio Delictivo MX</h3>
-      <p>Monitoreo y archivo de datos del SESNSP. Preserva el historial ante la sobrescritura de archivos oficiales.</p>
-      <ul>
-        <li><a href="https://github.com/jballesterosc/observatorio-delictivo-mx" target="_blank" rel="noopener"> jballesterosc/observatorio-delictivo-mx →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Modelado Predictivo</span>
-      <h3>Análisis de Delitos en México (sarablanz)</h3>
-      <p>Análisis exploratorio y modelado predictivo con dataset de Kaggle. Limpieza, visualizaciones y modelo de clasificación con 96.7% de precisión.</p>
-      <ul>
-        <li><a href="https://github.com/sarablanz/delitos_kaggle" target="_blank" rel="noopener">🤖 sarablanz/delitos_kaggle →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Personas Desaparecidas</span>
-      <h3>Desapariciones en México</h3>
-      <p>Datos de homicidios y desapariciones del SESNSP con comparativos estatales y detección de divergencias en registros.</p>
-      <ul>
-        <li><a href="https://github.com/lapanquecita/personas-desaparecidas" target="_blank" rel="noopener">🔍 lapanquecita/personas-desaparecidas →</a></li>
-      </ul>
+      <small style="color:var(--oro);display:block;margin-top:1rem">Hub FOR&CAP · Metodología de inteligencia aplicada · Septiembre 2026</small>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: REPOSITORIOS GITHUB - SEGURIDAD INDUSTRIAL Y LABORAL -->
+  <!-- SECCIÓN 4: FUENTES DE DATOS -->
   <section>
-    <h2>Repositorios GitHub · Seguridad Industrial y Laboral (HSE)</h2>
+    <h2>📚 Fuentes de Datos y Visualización</h2>
     
     <div class="card">
-      <span class="categoria-tag">NOM · STPS</span>
-      <h3>NOM-037-STPS-2023 (Teletrabajo)</h3>
-      <p>Implementación y documentación de la Norma Oficial Mexicana sobre requisitos de seguridad y salud para el teletrabajo.</p>
-      <ul>
-        <li><a href="https://github.com/RafaelG96/NOM-037-STPS" target="_blank" rel="noopener">📋 RafaelG96/NOM-037-STPS →</a></li>
+      <h3>Repositorios GitHub con Dashboards</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://github.com/lapanquecita/incidencia-delictiva" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📊 lapanquecita/incidencia-delictiva
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Scripts Python + gráficas automáticas de tendencias delictivas. Datos del SESNSP procesados.</p>
+        </li>
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://github.com/Beelzabi/crimen_mex" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+             Beelzabi/crimen_mex
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Datasets CSV unificados del SESNSP listos para análisis.</p>
+        </li>
+        <li style="padding:.8rem 0">
+          <a href="https://github.com/crosasr/hexseg-mx" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            🗺️ crosasr/hexseg-mx (SafeHex MX)
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Business Intelligence geoespacial con hexágonos H3. Mapas de calor delictivo.</p>
+        </li>
       </ul>
     </div>
 
     <div class="card">
-      <span class="categoria-tag">IA · SST</span>
-      <h3>AI-SST Vision</h3>
-      <p>Aplicación de inteligencia artificial multimodal para identificar, analizar y documentar situaciones de riesgo en entornos laborales.</p>
-      <ul>
-        <li><a href="https://github.com/Alex29Script/VisionIASST" target="_blank" rel="noopener">🤖 Alex29Script/VisionIASST →</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 5: REPOSITORIOS GITHUB - CIBERSEGURIDAD -->
-  <section>
-    <h2>Repositorios GitHub · Ciberseguridad</h2>
-
-    <div class="card">
-      <span class="categoria-tag">Mapeo Institucional</span>
-      <h3>Mapa de Autoridades de Ciberseguridad MX</h3>
-      <p>Proyecto colaborativo que mapea autoridades federales, estatales y sectoriales con competencias en ciberseguridad en México.</p>
-      <ul>
-        <li><a href="https://github.com/jersain-llamas/mapa-autoridades-ciber-mx" target="_blank" rel="noopener">🛡️ jersain-llamas/mapa-autoridades-ciber-mx →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Blue Team · MITRE</span>
-      <h3>CyberRisk-Lab</h3>
-      <p>Simulación práctica de ciberseguridad defensiva para empresas mexicanas. Aplica marcos MITRE ATT&CK e ISO/IEC 27005.</p>
-      <ul>
-        <li><a href="https://github.com/GuagnelliData/CyberRisk-Lab" target="_blank" rel="noopener">🔐 GuagnelliData/CyberRisk-Lab →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Suite OSINT</span>
-      <h3>MFH TOOLS PRO</h3>
-      <p>Suite de ciberseguridad con más de 20 herramientas: OSINT, escáner de puertos, cifrado. Hecho en México.</p>
-      <ul>
-        <li><a href="https://github.com/Falconmx1/mx_falconmx_security" target="_blank" rel="noopener">🔧 Falconmx1/mx_falconmx_security →</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 6: SEGURIDAD NACIONAL -->
-  <section>
-    <h2>Repositorios GitHub · Seguridad Nacional</h2>
-
-    <div class="card">
-      <span class="categoria-tag">Flujos de Armas</span>
-      <h3>US-MX Gun Flows</h3>
-      <p>Archivos STATA para investigación sobre flujos de armas entre Estados Unidos y México. Referencias al dataset CENAPI/Guacamaya.</p>
-      <ul>
-        <li><a href="https://github.com/tophermcd/US-MX-flows_The-Conversation" target="_blank" rel="noopener">🔫 tophermcd/US-MX-flows →</a></li>
+      <h3>Plataformas de Visualización Interactiva</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://hoyodecrimen.com" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            🟢 HoyoDeCrimen
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Mapas interactivos con filtros por delito, entidad y período. Reportes mensuales descargables.</p>
+        </li>
+        <li style="padding:.8rem 0;border-bottom:1px solid #2a313a">
+          <a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📊 SESNSP · Datos Abiertos
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Fuente primaria oficial. Descarga de bases de datos estatales, municipales y de víctimas.</p>
+        </li>
+        <li style="padding:.8rem 0">
+          <a href="https://mexicoevalua.org" target="_blank" rel="noopener" style="color:var(--oro2);text-decoration:none;font-weight:bold">
+            📈 México Evalúa · Data Justicia
+          </a>
+          <p style="color:var(--acero);font-size:.85rem;margin-top:.3rem">Análisis del sistema de justicia penal, impunidad y flujo de casos.</p>
+        </li>
       </ul>
     </div>
   </section>
 
-  <!-- SECCIÓN 7: CENTROS DE ANÁLISIS Y MEDIOS -->
+  <!-- SECCIÓN 5: RECOMENDACIONES -->
   <section>
-    <h2>Centros de Análisis y Medios Especializados</h2>
-    <p style="color:var(--acero);margin-bottom:1rem">Think tanks y medios con análisis profundo sobre seguridad, crimen organizado y justicia en México.</p>
-
-    <div class="card">
-      <span class="categoria-tag">Crimen Organizado</span>
-      <h3>InSightCrime · México</h3>
-      <p>Medio especializado en crimen organizado, narcotráfico y seguridad en las Américas. Análisis en español.</p>
-      <ul>
-        <li><a href="https://insightcrime.org/es/mexico/" target="_blank" rel="noopener"> InSightCrime · México →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Datos Delictivos</span>
-      <h3>HoyoDeCrimen</h3>
-      <p>Visualización de incidencia delictiva en México. Mapas interactivos y análisis de tendencias por entidad y delito.</p>
-      <ul>
-        <li><a href="https://hoyodecrimen.com" target="_blank" rel="noopener">🟢 HoyoDeCrimen →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Think Tank</span>
-      <h3>México Evalúa</h3>
-      <p>Centro de análisis y evaluación de políticas públicas. Data Justicia, seguridad, procuración y sistema penal.</p>
-      <ul>
-        <li><a href="https://mexicoevalua.org" target="_blank" rel="noopener"> México Evalúa →</a></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="categoria-tag">Plataforma Preventiva</span>
-      <h3>INFORM México</h3>
-      <p>Índice de riesgo multidimensional. Datos de México Evalúa y plataformas preventivas para cálculo de amenazas y exposición.</p>
-      <ul>
-        <li><a href="https://github.com/plataformapreventiva/inform-mexico" target="_blank" rel="noopener">📈 plataformapreventiva/inform-mexico →</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 8: ANÁLISIS FOR&CAP -->
-  <section>
-    <h2>Análisis FOR&CAP</h2>
-    <div class="card">
-      <h3>Nota editorial de la semana</h3>
-      <p>Edita este bloque en <code>boletin.html</code> para publicar tu análisis semanal del entorno de seguridad (reformas, criterios, tendencias delictivas).</p>
-      <small style="color:var(--oro)">Hub FOR&CAP · Metodología de inteligencia aplicada</small>
+    <h2>💡 Recomendaciones para el Sector Empresarial</h2>
+    <div class="dashboard-grid">
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">PyMEs Medianas</h4>
+        <p style="color:var(--acero);font-size:.9rem">Priorizar protocolos anti-extorsión y capacitación en manejo de amenazas. El aumento del 3.67% en extorsión impacta directamente su operación.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">Logística y Transporte</h4>
+        <p style="color:var(--acero);font-size:.9rem">Reforzar seguridad en corredores con alta incidencia de lesiones dolosas (+6.23%). Implementar rastreo GPS y protocolos de emergencia.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--oro2);margin-bottom:.5rem">Retail y Comercios</h4>
+        <p style="color:var(--acero);font-size:.9rem">Monitoreo de puntos de venta vulnerables a extorsión. Capacitación en identificación de patrones delictivos y respuesta coordinada.</p>
+      </div>
     </div>
   </section>
 
@@ -314,8 +306,9 @@ footer a:hover{color:var(--oro)}
 <footer>
   HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
   <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
-  Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.<br>
-  <small style="color:var(--acero);margin-top:.5rem;display:block">Sin trazabilidad no hay confianza · Biblioteca curada · Enlaces verificados al 18/09/2026</small>
+  <small style="color:var(--acero);margin-top:.5rem;display:block">
+    Sin trazabilidad no hay confianza · Datos: SESNSP julio 2026 · Procesamiento: GitHub repositorios abiertos · Actualizado: 18/09/2026
+  </small>
 </footer>
 
 </body>
