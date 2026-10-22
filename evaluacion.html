@@ -4,23 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Evaluación | Hub de Inteligencia y Gestión en Seguridad</title>
-<meta name="description" content="Evaluación independiente de seguridad: competencias, desempeño de prestador, vulnerabilidades físicas, eficacia tecnológica y cumplimiento normativo. Metodología FOR&CAP.">
+<meta name="description" content="Diagnóstico forense de seguridad patrimonial: contraloría de proveedores, matriz de riesgos, auditoría de CCTV y pentest físico. Metodología FOR&CAP.">
 <style>
 :root{--grafito:#14181d;--noche:#1e242b;--oro:#c9a227;--oro2:#f0d48a;--acero:#a9afb6;--texto:#f2f4f6}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI,Arial,sans-serif;background:var(--grafito);color:var(--texto);line-height:1.7}
 .wrap{max-width:900px;margin:auto;padding:0 1.2rem}
-header{background:var(--noche);border-bottom:3px solid var(--oro);padding:3rem 1rem;text-align:center}
-header h1{color:var(--oro);font-size:2.1rem;letter-spacing:2px;text-transform:uppercase}
-header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic}
+header{background:var(--noche);border-bottom:3px solid var(--oro);padding:4rem 1rem;text-align:center}
+header img.logo{width:100%;max-width:480px;height:auto;display:block;margin:0 auto 1.5rem}
+header .slogan{color:var(--oro2);margin-top:1rem;font-style:italic;font-size:1.1rem}
 nav{background:var(--noche);padding:.7rem;text-align:center;border-bottom:1px solid #2a313a}
 nav a{color:var(--oro2);text-decoration:none;margin:0 .7rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--oro)}
 section{padding:2.5rem 0;border-bottom:1px solid #2a313a}
 h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:uppercase;font-size:1.2rem}
-.card{background:var(--noche);border-left:3px solid var(--oro);padding:1rem 1.2rem;margin-bottom:1rem}
-.card h3{color:var(--oro2);font-size:1rem;margin-bottom:.3rem}
-.card p{color:var(--acero);font-size:.92rem}
+h3{color:var(--oro2);font-size:1.05rem;margin-bottom:.5rem}
+.card{background:var(--noche);border-left:3px solid var(--oro);padding:1.2rem 1.4rem;margin-bottom:1.2rem;border-radius:4px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(201,162,39,.15)}
+.card p{color:var(--acero);font-size:.95rem}
 .nota{border:1px solid var(--oro);background:var(--noche);color:var(--oro2);padding:1rem;margin:1.5rem 0;font-size:.9rem;text-align:center}
 .cta-container{text-align:center;margin:1.5rem 0 .5rem}
 .cta-button{display:inline-block;background:var(--oro);color:var(--grafito);padding:.9rem 1.8rem;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-radius:4px}
@@ -28,12 +29,13 @@ h2{color:var(--oro);letter-spacing:1px;margin-bottom:1.2rem;text-transform:upper
 footer{padding:2rem 1rem;text-align:center;color:var(--acero);font-size:.8rem;border-top:1px solid #2a313a;margin-top:2rem}
 footer a{color:var(--oro2);text-decoration:none}
 footer a:hover{color:var(--oro)}
+@media(max-width:600px){header img.logo{max-width:320px}header .slogan{font-size:.95rem}nav a{margin:0 .4rem;font-size:.75rem}.card{padding:1rem}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Hub de Inteligencia y Gestión en Seguridad</h1>
+  <img class="logo" src="logo-hub.png" alt="HUB de Inteligencia y Gestión en Seguridad">
   <div class="slogan">Prevención estratégica · Protección jurídica · Profesionalismo corporativo</div>
 </header>
 
@@ -47,42 +49,57 @@ footer a:hover{color:var(--oro)}
 </nav>
 
 <div class="wrap">
+
+  <!-- PÁRRAFO DE INICIO -->
   <section>
-    <h2>Evaluación</h2>
-    <p>La evaluación es la puerta de entrada del HUB para las direcciones: una lectura independiente del estado real de tu seguridad. Medimos competencias de tu personal, desempeño de tu prestador, vulnerabilidades físicas, eficacia tecnológica y cumplimiento normativo. La detección es solo el primer paso. Con el diagnóstico firmado en mano, te guiamos para subsanar cada hallazgo, indicándote qué cursos, talleres o certificaciones fortalecen tu operación, dónde obtenerlos y qué Normas Oficiales Mexicanas aplican a tu caso específico. Tú decides con evidencia; nosotros te acompañamos hasta el cumplimiento total.</p>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--texto);">
+      En el <strong style="color:var(--oro2);">HUB de Inteligencia y Gestión en Seguridad</strong>, la evaluación no es una opinión: es una <strong style="color:var(--oro2);">radiografía forense</strong> de su operación. Antes de diseñar, auditar o transferir criterio, necesitamos ver lo que otros no ven. Aplicamos la fase de <strong style="color:var(--oro2);">Diagnóstico</strong> de la metodología <strong style="color:var(--oro2);">FOR&CAP</strong> para medir con evidencia el estado real de su seguridad patrimonial, el desempeño de sus proveedores, la eficacia de su tecnología y su exposición normativa. Cada evaluación entrega un dictamen firmado, con hallazgos citables, KPIs verificables y una hoja de ruta priorizada. Porque <strong style="color:var(--oro2);">no se puede proteger lo que no se mide con trazabilidad.</strong>
+    </p>
   </section>
 
+  <!-- SECCIÓN DE EVALUACIÓN -->
   <section>
-    <h2>Dimensiones evaluadas</h2>
+    <h2>Evaluación · Diagnóstico Forense</h2>
+    <p style="color:var(--acero); font-style:italic; margin-bottom:1.5rem;">No se puede proteger lo que no se mide con trazabilidad. Radiografía de su operación actual.</p>
+
     <div class="card">
-      <h3>Competencias del personal</h3>
-      <p>Verificación de perfiles, controles de confianza y alineación con los puestos críticos de tu operación.</p>
+      <h3>SVC-01 · Diagnóstico de Seguridad Patrimonial</h3>
+      <p>Inspección física, auditoría documental, análisis de bitácoras y reportería CCTV, entrevistas con mandos y matriz de riesgos Método Mosler. Identificamos las brechas reales entre lo que su proveedor dice hacer y lo que realmente ocurre en su operación.</p>
     </div>
+
     <div class="card">
-      <h3>Desempeño del prestador</h3>
-      <p>Auditoría de SLAs, bitácoras, consignas y KPIs reales versus los reportados contractualmente.</p>
+      <h3>SVC-02 · Contraloría de Proveedor de Seguridad</h3>
+      <p>Auditoría independiente del proveedor actual: cumplimiento de consignas, KPIs reales, perfil de guardias, capacitación efectiva y bitácoras trazables. Detectamos fugas de capital por "guardias fantasma" o incumplimiento de SLA sin conflicto de interés.</p>
     </div>
+
     <div class="card">
-      <h3>Vulnerabilidad física y tecnológica</h3>
-      <p>Inspección de instalaciones, controles de acceso, CCTV, alarmas y sistemas de respuesta.</p>
+      <h3>SVC-04 · Matriz de Riesgos Patrimoniales</h3>
+      <p>Traducimos las amenazas a pérdida financiera esperada (ALE) y exposición legal. Cuantificamos riesgos no visibles para que la Alta Dirección tome decisiones de presupuesto con base en datos, no en intuición.</p>
     </div>
+
     <div class="card">
-      <h3>Cumplimiento normativo</h3>
-      <p>Revisión contra NOMs aplicables, estándares CONOCER y marcos internacionales (C-TPAT, OEA, TAPA).</p>
+      <h3>SVC-08 · Auditoría de CCTV, Control de Accesos y Ciberseguridad Industrial</h3>
+      <p>Validamos cobertura real, puntos ciegos y segregación de redes OT/IT. Desmontamos las falsas ilusiones tecnológicas con evidencia técnica de lo que sus sistemas realmente ven y lo que dejan pasar.</p>
+    </div>
+
+    <div class="card">
+      <h3>SVC-18 · Pentest Patrimonial 360° (Auditoría de Intrusión Física)</h3>
+      <p>Simulación encubierta con blindaje legal para probar sus controles en tiempo real. Vulnerabilidades físicas y de ingeniería social documentadas con cadena de custodia, válidas ante aseguradoras y autoridades.</p>
     </div>
   </section>
 
-  <div class="nota">El HUB no emite certificaciones: entrega un diagnóstico firmado con hallazgos, evidencias y ruta de subsanación.</div>
+  <div class="nota">No vendemos horas-hombre de guardias, no vendemos equipos y no operamos servicios regulados. Vendemos inteligencia y procesos.</div>
 
   <div class="cta-container">
     <a class="cta-button" href="https://tally.so/r/WO70KR" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo</a>
   </div>
+
 </div>
 
 <footer>
   HUB DE INTELIGENCIA Y GESTIÓN EN SEGURIDAD · Metodología FOR&CAP<br>
   <a href="mailto:hub-forcap@proton.me">hub-forcap@proton.me</a> · <a href="https://wa.me/525658346378">WhatsApp 56 5834 6378</a><br>
-  Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.
+  <small style="color:var(--acero);margin-top:.5rem;display:block">Consultoría intelectual independiente. No prestamos servicios regulados por la Ley de Seguridad Privada del Estado de México.</small>
 </footer>
 
 </body>
